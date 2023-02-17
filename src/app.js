@@ -1,6 +1,6 @@
 import PAGES from "./models/PageModel.js";
-
 import { pageChangeHandler } from "./routes/router.js";
+import "./pages/Signup.js";
 
 const navHomeLink = document.getElementById("home-page-link");
 

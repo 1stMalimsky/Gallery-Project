@@ -4,24 +4,15 @@ class User {
     contact;
     address;
     password;
-    bussinesAccount;
+    businessAccount;
 
-    constructor(id, name, contact, address, password, bussinesAccount) {
+    constructor(id, name, contact, address, password, businessAccount) {
         this.id = id;
         this.name = name;
         this.contact = contact;
         this.address = address;
         this.password = password;
-        this.bussinesAccount = false;
-    }
-}
-
-class Contact {
-    email;
-    phone;
-    constructor(email, phone) {
-        this.email = email;
-        this.phone = phone;
+        this.businessAccount = businessAccount;
     }
 }
 
@@ -31,6 +22,15 @@ class Name {
     constructor(firstName, lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+}
+
+class Contact {
+    email;
+    phone;
+    constructor(email, phone) {
+        this.email = email;
+        this.phone = phone;
     }
 }
 
@@ -51,4 +51,4 @@ class Address {
     }
 }
 
-export default User;
+export { User, Address, Contact, Name };

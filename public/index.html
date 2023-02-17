@@ -41,30 +41,130 @@
         </div>
     </nav>
     <main>
+
         <!-- Home Page -->
-        <div class="d-block" id="home-page">
+        <div class="d-none" id="home-page">
             <h1>Home Page</h1>
         </div>
+
         <!-- About Page -->
         <div class="d-none" id="about-page">
             <h1>About Us</h1>
         </div>
+
         <!-- Signup Page -->
-        <div class="d-none" id="signup-page">
+        <div class="container d-block" id="signup-page">
             <h1>Signup</h1>
+            <div id="sign-up-para">
+                <p>We're delighted to hear you'd like to join our community. Please fill out the form below to signup
+                </p>
+            </div>
+
+            <div id="signup-inputs">
+                <!-- Fullname input -->
+                <h2>Full Name</h2>
+                <div class="d-flex flex-wrap" id="sign-up-fullName">
+                    <form class="form-floating inputForm" id="firstName-form">
+                        <input type="text" class="form-control" id="signup-fisrtName">
+                        <label for="first-name">First Name<span style="color:red">*</span></label>
+                    </form>
+                    <form class="form-floating inputForm" id="lastName-form">
+                        <input type="text" class="form-control" id="signup-lastName">
+                        <label for="last-name">Last Name<span style="color:red">*</span></label>
+                    </form>
+                    <div class="alert alert-danger d-none" id="fullnameErrorAlerts">
+                    </div>
+                </div>
+                <!-- Address input  -->
+                <h2>Address</h2>
+                <div class="d-flex flex-wrap" id="sign-up-address">
+                    <form class="form-floating inputForm">
+                        <input type="text" class="form-control" id="signup-state">
+                        <label for="state">State</label>
+                    </form>
+                    <form class="form-floating inputForm">
+                        <input type="text" class="form-control" id="signup-country">
+                        <label for="country">Country</label>
+                    </form>
+                    <form class="form-floating inputForm">
+                        <input type="text" class="form-control" id="signup-city">
+                        <label for="city">City</label>
+                    </form>
+                    <form class="form-floating inputForm">
+                        <input type="text" class="form-control" id="signup-street">
+                        <label for="street">Street</label>
+                    </form>
+                    <form class="form-floating inputForm">
+                        <input type="text" class="form-control" id="signup-houseNumber">
+                        <label for="houseNumber">House Number</label>
+                    </form>
+                    <form class="form-floating inputForm">
+                        <input type="text" class="form-control" id="signup-zipcode">
+                        <label for="zipcode">Zipcode</label>
+                    </form><br>
+                    <div class="alert alert-danger d-none" id="addressErrorAlerts">
+                    </div>
+                </div>
+                <!-- Contact details input -->
+                <h2>Contact Details</h2>
+                <div class="d-flex flex-wrap" id="signup-contactDiv">
+                    <form class="form-floating inputForm">
+                        <input type="email" class="form-control" id="signup-emailAddress">
+                        <label for="emailAddress">Email Address<span style="color:red">*</span></label>
+                    </form>
+                    <form class="form-floating inputForm">
+                        <input type="text" class="form-control" id="signup-phoneNumber">
+                        <label for="phoneNumber">Phone Number</label>
+                    </form>
+                    <div class="alert alert-danger d-none" id="contact-errorAlerts">
+                    </div>
+                </div><br>
+
+                <!-- Password input -->
+                <h2>Passwrod</h2>
+                <div class="d-flex flex-wrap" id="signup-passwordDiv">
+                    <form class="form-floating inputForm">
+                        <input type="password" class="form-control" id="signup-password">
+                        <label for="signup-password">Password<span style="color:red">*</span></label>
+                    </form>
+                    <form class="form-floating inputForm">
+                        <input type="password" class="form-control" id="signup-confirmPassword">
+                        <label for="signup-confirmPassword">Confirm Password<span style="color:red">*</span></label>
+                    </form>
+                    <div class="alert alert-danger d-none" id="password-errorAlerts">
+                    </div>
+                </div>
+
+                <!-- Bussiness account -->
+                <div class="businessAcountInput" style="margin-left: 15rem">
+                    <input type="checkbox" id="signup-businessCheckbox">Bussiness
+                    account user
+                </div>
+            </div>
+            <div class="alert alert-danger d-none" id="signupErrDiv"></div>
+            <button class="btn btn-success" disabled="true" id="signup-btn">
+                Click to Signup
+            </button>
         </div>
+
+
+
+
         <!-- Login Page -->
         <div class="d-none" id="login-page">
             <h1>Login</h1>
         </div>
+
         <!-- Profile page -->
         <div class="d-none" id="profile-page">
             <h1>Profile</h1>
         </div>
+
         <!-- 404 Page -->
         <div class="d-none" id="page-not-found">
             <h1>Page Not Found</h1>
         </div>
+
     </main>
     <footer></footer>
     <script src="../src/app.js" type="module"></script>

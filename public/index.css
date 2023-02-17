@@ -1,0 +1,36 @@
+/* General settings */
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+.brDiv {
+  width: 100%;
+  height: 0;
+  display: block;
+}
+
+/* Register Page */
+
+#signup-page h2 {
+  margin-left: 2rem;
+  font-size: 1.3rem;
+}
+
+#signup-page p {
+  font-size: 1.3rem;
+}
+.inputForm {
+  width: 20rem;
+  font-size: 1.2rem;
+  margin: 0.9rem;
+  color: black;
+}
+
+#signup-inputs {
+  background-color: #fff4bc34;
+  padding: 15px;
+}
