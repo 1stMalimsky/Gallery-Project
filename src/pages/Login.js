@@ -86,11 +86,11 @@ loginBtn.addEventListener("click", () => {
         emailErrDiv.classList.remove("d-none");
         emailErrDiv.innerHTML = "Incorrect email or password. Please try again";
         setTimeout(() => {
-            loginEmailErrDiv.classList.add("d-none");
+            emailErrDiv.classList.add("d-none");
         }, 2500);
         return;
     }
-    localStorage.setItem("token", JSON.stringify({ id: currentUser.id, name: currentUser.name, email: currentUser.contact.email, businessAcount: currentUser.businessAccount }));
+    localStorage.setItem("token", JSON.stringify({ id: currentUser.id, name: currentUser.name, email: currentUser.contact.email, businessAccount: currentUser.businessAccount }));
     document.getElementById("loginSuccessDiv").classList.remove("d-none");
     document.getElementById("loginSuccessDiv").innerHTML = `Log in successful! Welcome back ${currentUser.name.firstName} ${currentUser.name.lastName}`;
     setTimeout(() => {
