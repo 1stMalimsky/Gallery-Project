@@ -36,7 +36,6 @@ let emailCheck = false;
 let passwordCheck = false;
 
 window.addEventListener("load", () => {
-
     if (firstNameInput.value !== "") {
         () => {
             checkNameInput();
@@ -173,6 +172,9 @@ signupBtn.addEventListener("click", () => {
     let nextUserId = localStorage.getItem("nextUserId");
     let businessCheckbox = document.getElementById("signup-businessCheckbox");
     let businessAccount = false;
+    if (!nextUserId) {
+        nextUserId = 1;
+    }
     nextUserId = +nextUserId;
     let newUser = new User(
         nextUserId++,
@@ -182,10 +184,9 @@ signupBtn.addEventListener("click", () => {
         passwordInput.value,
         businessAccount
     );
-
     localStorage.setItem("nextUserId", nextUserId + "");
     if (!users) {
-        let users = [newUser];
+        users = [newUser];
         if (businessCheckbox.checked) {
             newUser.businessAccount = true;
         }
@@ -199,13 +200,24 @@ signupBtn.addEventListener("click", () => {
         for (let user of users) {
             if (user.contact.email == emailInput.value) {
                 document.getElementById("signupErrDiv").classList.remove("d-none");
+                document.getElementById("signupSuccessDiv").classList.add("d-none");
                 document.getElementById("signupErrDiv").innerHTML = "Email already exists";
+                setTimeout(() => { document.getElementById("signupErrDiv").classList.add("d-none"); }, 2700);
                 return;
             }
         }
         users = [...users, newUser];
         localStorage.setItem("users", JSON.stringify(users));
-        // pageChangeHandler(PAGES.LOGIN);
     }
-});
+    document.getElementById("signupErrDiv").classList.add("d-none");
+    document.getElementById("signupSuccessDiv").classList.remove("d-none");
+    document.getElementById("signupSuccessDiv").innerHTML = "Signup Successful!";
+    setTimeout(() => { document.getElementById("signupSuccessDiv").classList.add("d-none"); }, 2500);
+    setTimeout(() => {
+        pageChangeHandler(PAGES.LOGIN)
+    }
+        , 2500);
+
+}
+);
 
