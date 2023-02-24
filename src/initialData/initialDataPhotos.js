@@ -1,6 +1,7 @@
 import Photo from "../models/Photo.js";
 
 let id = 1;
+let nextId = 1;
 
 const createPhotos = () => {
     let initialPhotos = [
@@ -72,6 +73,7 @@ const setPhotosInitailData = () => {
         return;
     }
     localStorage.setItem("photos", JSON.stringify(createPhotos()));
+    localStorage.setItem("nextPhotoId", id + "");
 };
 
 setPhotosInitailData();

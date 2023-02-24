@@ -34,3 +34,36 @@ p {
   background-color: #fff4bc34;
   padding: 15px;
 }
+
+.edit-popup-div-window {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff8b;
+  z-index: 999;
+}
+
+.edit-popup-div-wrapper {
+  width: 40%;
+  height: 90%;
+  margin: 2% auto;
+  background-color: #cfcfcf;
+}
+
+.edit-popup-div-inputs {
+  border: 1px solid #000;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+#editImgUrlDisplay {
+  width: 25em;
+  margin: 2em;
+}
+
+#editInputsContainer {
+  background-color: #656565a0;
+}

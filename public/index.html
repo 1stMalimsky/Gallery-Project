@@ -42,11 +42,51 @@
         </div>
     </nav>
     <main>
+        <!-- Edit popup -->
+        <div id="editPopupWindow" class="edit-popup-div-window d-none">
+            <div id="editPopupWrapper" class="container edit-popup-div-wrapper">
+                <br>
+                <h1>Edit Photo</h1>
+                <hr>
+                <p>Please enter any details you'd like to change</p>
+                <div id="editDivInputs" class="edit-popup-div-inputs">
+                    <div class="row" id="editInputsContainer">
+                        <div class="col-6 editInputFields">
+                            <div class="form-floating m-lg-3">
+                                <input type="text" class="editInputs form-control w-75" id="editUrlInput">
+                                <label for="editUrlInput">Photo Url:</label>
+                            </div>
+                            <div class="form-floating m-lg-3">
+                                <input type="text" class="editInputs form-control w-75" id="editAlternativeInput">
+                                <label for="editAlternativeInput">Alternative Text:</label>
+                            </div>
+                            <div class="form-floating m-lg-3">
+                                <input type="text" class="editInputs form-control w-75" id="editCreditInput">
+                                <label for="editCreditinput">Credit:</label>
+                            </div>
+                            <div class="form-floating m-lg-3">
+                                <input type="text" class="editInputs form-control w-75" id="editPriceInput">
+                                <label for="editPriceInput">Price:</label>
+                            </div>
+                        </div>
+                        <div class="col-6 editImgPreview w-50">
+                            <img src="" alt="your photo here" id="editImgUrlDisplay">
+                        </div>
+                        <div class="editBtn d-flex justify-content-center">
+                            <button type="button" class="btn btn-primary m-3 w-25" id="editSubmitBtn">Submit
+                                Edit</button>
+                            <button type="button" class="btn btn-primary m-3 w-25" id="editCancelBtn">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Home Page -->
         <div class="container-fluid">
             <div class="d-block" id="home-page">
                 <h1>Home Page</h1>
+
                 <div id="displayOptions" class="d-flex" style="margin-left: 5em;">
                     <button type="button" class="btn btn-info me-1" id="homeListDisplay"><i class=" bi bi-list-ul"></i>
                     </button>
@@ -60,6 +100,7 @@
                             class="bi bi-sort-alpha-down"></i></button>
                     <button type="button" class="btn btn-outline-dark me-1" id="sortDec"><i
                             class="bi bi-sort-alpha-up"></i></button>
+
                 </div><br>
                 <div id="listDisplayDiv" class="d-block" style="margin-left: 5em">
                     <h2>List Display</h2>
@@ -70,7 +111,7 @@
                 <div id="galleryDisplayDiv" class="d-none" style="margin-left: 5em;">
                     <h2>Gallery Display</h2>
                 </div>
-                <div id="CarouselDisplayDiv" class="d-none" style="margin-left: 5em;">
+                <div id="carouselDisplayDiv" class="d-none" style="margin-left: 5em;">
                     <h2>Slideshow Display</h2>
                 </div>
             </div>

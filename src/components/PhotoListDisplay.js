@@ -1,12 +1,18 @@
 import { clearBtnsEventListener, addBtnsEventListener } from "../utils/BtnEventHandlers.js";
+import initPopup from "../components/Popup.js";
+
 
 const listDiv = document.getElementById("photosList");
 let photoArr;
 let businessAccountStatus;
+let deletePhoto;
+let selectedPhotoPopup;
 
-const initializePhotosListDisplay = (photoArrFromHomepage, businessAccountStatusFromHomepage) => {
+const initializePhotosListDisplay = (photoArrFromHomepage, businessAccountStatusFromHomepage, deletePhotoFromHomepage, SelectedPhotoPopupFromHomepage) => {
     businessAccountStatus = businessAccountStatusFromHomepage;
     updateListDisplay(photoArrFromHomepage);
+    deletePhoto = deletePhotoFromHomepage;
+    selectedPhotoPopup = SelectedPhotoPopupFromHomepage;
 };
 
 const updateListDisplay = (photoArrFromHomepage) => {
@@ -16,7 +22,8 @@ const updateListDisplay = (photoArrFromHomepage) => {
 
 const createPhotoListItem = (photoId, title, subtitle, credit, price, imgUrl, createdAt) => {
     let businessAccountBtns = `<button class="btn btn-warning m-1" id="listEditButton-${photoId}"><i class="bi bi-pencil-fill"></i> Edit Photo</button>
-                            <button class="btn btn-danger m-1"><i class="bi bi-trash3-fill" id="listDeleteButton-${photoId}"></i> Delete Photo</button>`;
+                            <button class="btn btn-danger m-1" id="listDeleteButton-${photoId}"><i class="bi bi-trash3-fill"></i> Delete Photo</button>`
+
     return `<div id="listItem-${photoId}" class="d-flex flex-wrap mb-3">
                             <img src=${imgUrl} alt="${title}" id="listDisplayImg"
                                 style="width: 20em; margin-right: 2em;">
@@ -35,9 +42,27 @@ const createPhotoListItem = (photoId, title, subtitle, credit, price, imgUrl, cr
 };
 
 
+const getIdFromClick = (ev) => {
+    let idFromEv = ev.target.id.split("-");
+    if (!ev.target.id) {
+        idFromEv = ev.target.parentElement.id.split("-");
+    }
+    return idFromEv[1];
+};
+
+const handleDeleteBtnClick = (ev) => {
+    deletePhoto(getIdFromClick(ev));
+};
+
+const handleEditBtnClick = (ev) => {
+    selectedPhotoPopup(getIdFromClick(ev));
+};
+
+
 const createListDisplay = () => {
     let outputStr = "";
-    //clearBtnsEventListener(listDeleteButton)
+    clearBtnsEventListener("listDeleteButton", handleDeleteBtnClick);
+    clearBtnsEventListener("listEditButton", handleEditBtnClick);
     for (let photo of photoArr) {
         outputStr += createPhotoListItem(
             photo.id,
@@ -50,7 +75,8 @@ const createListDisplay = () => {
         )
     }
     listDiv.innerHTML = outputStr;
-    //addBtnsEventListener(listDeleteButton)
+    addBtnsEventListener("listDeleteButton", handleDeleteBtnClick);
+    addBtnsEventListener("listEditButton", handleEditBtnClick);
 }
 
 export { initializePhotosListDisplay, updateListDisplay };
