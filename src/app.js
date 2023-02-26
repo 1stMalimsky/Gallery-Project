@@ -5,6 +5,8 @@ import "./pages/Login.js";
 import "./pages/HomePage.js";
 import "./initialData/initialDataPhotos.js";
 
+const navLogoLink = document.getElementById("navBarLogoImg");
+
 const navHomeLink = document.getElementById("home-page-link");
 
 const navAboutLink = document.getElementById("about-page-link");
@@ -17,6 +19,7 @@ const navProfileLink = document.getElementById("profile-page-link");
 
 const navPage404 = document.getElementById("page-not-found-link");
 
+navLogoLink.addEventListener("click", () => pageChangeHandler(PAGES.HOME));
 navHomeLink.addEventListener("click", () => pageChangeHandler(PAGES.HOME));
 navAboutLink.addEventListener("click", () => pageChangeHandler(PAGES.ABOUT));
 navSignupLink.addEventListener("click", () => pageChangeHandler(PAGES.SIGNUP));

@@ -81,7 +81,6 @@ loginBtn.addEventListener("click", () => {
         return;
     }
     let currentUser = users.find((item) => item.contact.email === loginEmailInput.value && item.password === loginPasswordInput.value);
-    console.log(currentUser);
     if (!currentUser) {
         emailErrDiv.classList.remove("d-none");
         emailErrDiv.innerHTML = "Incorrect email or password. Please try again";

@@ -1,4 +1,6 @@
 import { initializePhotosListDisplay, updateListDisplay } from "../components/PhotoListDisplay.js";
+import { initializePhotosGalleryDisplay, updateGalleryDisplay } from "../components/PhotoGalleryDisplay.js"
+
 import "../initialData/initialDataPhotos.js";
 import checkBussinessAccountStatus from "../utils/BussinesAccountStatusCheck.js";
 import initPopup from "../components/Popup.js";
@@ -6,6 +8,14 @@ import initPopup from "../components/Popup.js";
 
 let isBusinessAccount;
 let photoArr, storagePhotoArr;
+let defaultDisplay;
+
+let listDisplayDiv;
+let galleryDisplayDiv;
+let carouselDisplayDiv;
+let listDisplayBtn;
+let galleryDisplayBtn;
+let carouselDisplayBtn;
 
 window.addEventListener("load", () => {
 
@@ -17,29 +27,60 @@ window.addEventListener("load", () => {
     storagePhotoArr = [...photoArr];
     isBusinessAccount = checkBussinessAccountStatus();
     initializePhotosListDisplay(photoArr, isBusinessAccount, deletePhoto, selectedPhotoPopup);
-    definebuttons();
-    displayDivDefinition();
+    initializePhotosGalleryDisplay(photoArr);
+    elementsDefinition();
+    activateButtons();
 });
 
-const displayDivDefinition = () => {
-    const listDisplayDiv = document.getElementById("listDisplayDiv");
+const elementsDefinition = () => {
+    listDisplayDiv = document.getElementById("listDisplayDiv");
 
-    const galleryDisplayDiv = document.getElementById("galleryDisplayDiv");
+    galleryDisplayDiv = document.getElementById("galleryDisplayDiv");
 
-    const carouselDisplayDiv = document.getElementById("carouselDisplayDiv");
+    carouselDisplayDiv = document.getElementById("carouselDisplayDiv");
+
+    listDisplayBtn = document.getElementById("homeListDisplayBtn");
+
+    galleryDisplayBtn = document.getElementById("homeGalleryDisplayBtn");
+
+    carouselDisplayBtn = document.getElementById("homeCarouselDisplayBtn");
+    defaultDisplay = listDisplayDiv;
+    displayHandler(listDisplayDiv);
 }
 
-const definebuttons = () => {
-    const homepageListDisplayBtn = document.getElementById("homeListDisplay");
+const activateButtons = () => {
+    listDisplayBtn.addEventListener("click", () => {
+        displayHandler(listDisplayDiv);
+    });
 
-    const homepageGalleryDisplayBtn = document.getElementById("homeGalleryDisaply");
+    galleryDisplayBtn.addEventListener("click", () => {
+        displayHandler(galleryDisplayDiv);
+    });
 
-    const homepageCarouselDisplayBtn = document.getElementById("homeCarouselDisplay");
+    document.getElementById("homeDisplaySearch").addEventListener("input", (ev) => {
+        let regex = new RegExp("^" + ev.target.value, "i");
+        photoArr = storagePhotoArr.filter((item) => {
+            let reg = regex.test(item.title);
+            return reg;
+        });
+        displayUpdate(photoArr);
+    });
 
-    const sortAscBtn = document.getElementById("sortAsc");
-
-    const sortDecBtn = document.getElementById("sortDec");
 }
+
+const displayUpdate = () => {
+    updateGalleryDisplay(photoArr);
+    updateListDisplay(photoArr);
+}
+
+const displayHandler = (chosenDisplay) => {
+    defaultDisplay.classList.remove("d-block");
+    defaultDisplay.classList.add("d-none");
+
+    chosenDisplay.classList.add("d-block");
+    chosenDisplay.classList.remove("d-none");
+}
+
 const sortItems = (photoArr, asc = true) => {
     const sortedArr = [...photoArr];
     if (asc) {
@@ -56,7 +97,7 @@ const saveToLocalStorage = (arrToSave) => {
 
 const editPhotoSubmit = () => {
     saveToLocalStorage(photoArr);
-    updateListDisplay(photoArr);
+    displayUpdate(photoArr);
 }
 
 const selectedPhotoPopup = (id) => {
@@ -73,18 +114,17 @@ const deletePhoto = (id) => {
     );
     saveToLocalStorage(storagePhotoArr);
     photoArr = photoArr.filter((item) => item.id !== id);
-    updateListDisplay(photoArr);
-    //updateDisplays();
+    displayUpdate(photoArr);
 };
 
 
 document.getElementById("sortAsc").addEventListener("click", () => {
     photoArr = sortItems(photoArr, true);
-    updateListDisplay(photoArr);
+    displayUpdate(photoArr);
 });
 
 document.getElementById("sortDec").addEventListener("click", () => {
     photoArr = sortItems(photoArr, false);
-    updateListDisplay(photoArr);
+    displayUpdate(photoArr);
 });
 

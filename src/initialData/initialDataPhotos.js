@@ -17,7 +17,7 @@ const createPhotos = () => {
         new Photo(
             id++,
             "Abandoned Fortress",
-            "Nimrod Fortress - Golan Heigths",
+            "Nimrod - Golan Heigths",
             "Yoram Arbel",
             "500&#8362",
             "../../public/assets/imgs/nimrodFortress.jpg",
@@ -37,7 +37,7 @@ const createPhotos = () => {
         new Photo(
             id++,
             "St. Mary Lake at Noon",
-            "Into the Sun rd. - Glacier NAtional Park",
+            "Into the Sun rd. - Glacier Ntl Park",
             "Eddy Bauer",
             "750&#8362",
             "../../public/assets/imgs/stMaryLake.jpg",

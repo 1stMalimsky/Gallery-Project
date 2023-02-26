@@ -16,7 +16,8 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#"><img src="./assets/imgs/Logo.png" alt="Logo" id="navBarLogoImg"
+                    style="width: 7em;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -43,30 +44,28 @@
     </nav>
     <main>
 
-        <!-- Edit popup window-->
-        <div id="editPopupWindow" class="edit-popup-div-window d-none">
+        <!-- Edit popup window -->
+        <div id="editPopupWindow" class="edit-popup-div-window d-none d-flex justify-content-center">
             <div id="editPopupWrapper" class="container edit-popup-div-wrapper">
                 <br>
                 <h1>Edit Photo</h1>
-                <hr>
-                <p>Please enter any details you'd like to change</p>
                 <div id="editDivInputs" class="edit-popup-div-inputs">
                     <div class="row" id="editInputsContainer">
                         <div class="col-6 editInputFields">
                             <div class="form-floating m-lg-3">
-                                <input type="text" class="editInputs form-control w-75" id="editUrlInput">
+                                <input type="text" class="editInputs form-control" id="editUrlInput">
                                 <label for="editUrlInput">Photo Url:</label>
                             </div>
                             <div class="form-floating m-lg-3">
-                                <input type="text" class="editInputs form-control w-75" id="editAlternativeInput">
+                                <input type="text" class="editInputs form-control" id="editAlternativeInput">
                                 <label for="editAlternativeInput">Alternative Text:</label>
                             </div>
                             <div class="form-floating m-lg-3">
-                                <input type="text" class="editInputs form-control w-75" id="editCreditInput">
+                                <input type="text" class="editInputs form-control" id="editCreditInput">
                                 <label for="editCreditinput">Credit:</label>
                             </div>
                             <div class="form-floating m-lg-3">
-                                <input type="text" class="editInputs form-control w-75" id="editPriceInput">
+                                <input type="text" class="editInputs form-control" id="editPriceInput">
                                 <label for="editPriceInput">Price:</label>
                             </div>
                         </div>
@@ -74,9 +73,9 @@
                             <img src="" alt="your photo here" id="editImgUrlDisplay">
                         </div>
                         <div class="editBtn d-flex justify-content-center">
-                            <button type="button" class="btn btn-primary m-3 w-25" id="editSubmitBtn">Submit
+                            <button type="button" class="btn btn-warning m-3 w-25" id="editSubmitBtn">Submit
                                 Edit</button>
-                            <button type="button" class="btn btn-primary m-3 w-25" id="editCancelBtn">Cancel</button>
+                            <button type="button" class="btn btn-danger m-3 w-25" id="editCancelBtn">Cancel</button>
                         </div>
                     </div>
                 </div>
@@ -89,21 +88,26 @@
                 <h1>Home Page</h1>
 
                 <div id="displayOptions" class="d-flex" style="margin-left: 5em;">
-                    <button type="button" class="btn btn-info me-1" id="homeListDisplay"><i class=" bi bi-list-ul"></i>
+                    <button type="button" class="btn btn-info me-1" id="homeListDisplayBtn"><i
+                            class=" bi bi-list-ul"></i>
                     </button>
-                    <button type="button" class="btn btn-info me-1" id="homeGalleryDisplay"><i
+                    <button type="button" class="btn btn-info me-1" id="homeGalleryDisplayBtn"><i
                             class="bi bi-microsoft"></i>
                     </button>
-                    <button type="button" class="btn btn-info me-1" id="homeCarouselDisplay"><i
+                    <button type="button" class="btn btn-info me-1" id="homeCarouselDisplayBtn"><i
                             class="bi bi-collection-play-fill"></i>
                     </button>
                     <button type="button" class="btn btn-outline-dark me-1" id="sortAsc"><i
                             class="bi bi-sort-alpha-down"></i></button>
                     <button type="button" class="btn btn-outline-dark me-1" id="sortDec"><i
                             class="bi bi-sort-alpha-up"></i></button>
-
+                    <form class="d-flex align-self-end" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                            id="homeDisplaySearch" />
+                    </form>
                 </div><br>
-                <div id="listDisplayDiv" class="d-block">
+                <!-- List Display Div -->
+                <div id="listDisplayDiv" class="d-none">
                     <h2>List Display</h2>
                     <hr>
                     <div id="listDisplaywrapper" class="d-flex w-100">
@@ -112,9 +116,17 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Gallery Display Div -->
                 <div id="galleryDisplayDiv" class="d-none" style="margin-left: 5em;">
                     <h2>Gallery Display</h2>
+                    <hr>
+                    <div id="photosGallery" class="d-flex flex-wrap justify-content-center">
+
+                    </div>
                 </div>
+
+                <!-- Carousel Display Div -->
                 <div id="carouselDisplayDiv" class="d-none" style="margin-left: 5em;">
                     <h2>Slideshow Display</h2>
                 </div>

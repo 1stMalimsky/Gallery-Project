@@ -1,0 +1,66 @@
+@media (min-width: 991px) {
+  .listBtns {
+    width: 15rem;
+    flex-direction: column;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .listImg {
+    width: 12rem !important;
+    height: 6rem !important;
+  }
+
+  .listDescription {
+    display: block;
+    margin-left: -15rem !important;
+    text-align: left !important;
+
+    h3 {
+      font-size: 1.2rem;
+    }
+
+    h6 {
+      font-size: 1rem;
+    }
+  }
+
+  .listBtns {
+    flex-direction: column !important;
+    width: 10rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .listGenItem {
+    display: flex !important;
+  }
+
+  .listDescription {
+    margin: 0;
+
+    text-align: left;
+  }
+
+  .listDescription h3 {
+    font-size: 0.8rem;
+  }
+
+  .listDescription h6 {
+    font-size: 0.7rem;
+  }
+
+  .listImg {
+    width: 10rem !important;
+    height: 5rem !important;
+  }
+
+  .listBtns {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 445px) {
+  .listBtns {
+    flex-direction: row !important;
+  }
+}

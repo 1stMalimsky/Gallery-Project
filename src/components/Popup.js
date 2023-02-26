@@ -1,5 +1,5 @@
 const editSubmitBtn = document.getElementById("editSubmitBtn");
-const editCancelBtn = document.getElementById("editCancelBtn");
+//const editCancelBtn = document.getElementById("editCancelBtn");
 
 const editPopupWindow = document.getElementById("editPopupWindow");
 const editUrlInput = document.getElementById("editUrlInput");
@@ -15,7 +15,6 @@ const initPopup = (selectedPhotoFromHomePage, editPhotoFromHomePage) => {
     if (selectedPhotoFromHomePage) {
         selectedPhoto = selectedPhotoFromHomePage;
         editPhotoSubmit = editPhotoFromHomePage;
-        console.log(selectedPhoto);
     }
     //else {    selectedProperty = new Property(getNextId(), "", 0, "", "");}
     //editPhoto = editPropertyFromHomePage;
@@ -48,8 +47,8 @@ window.addEventListener("load", () => {
         editPhotoSubmit(selectedPhoto)
         hideEditPopup();
     });
-    imgUrlDisplay.addEventListener("input", () => {
-        imgUrlDisplay.src = editPropertiesPopupImg.value;
+    editUrlInput.addEventListener("change", () => {
+        imgUrlDisplay.src = editUrlInput.value;
     });
 });
 
