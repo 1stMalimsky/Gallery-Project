@@ -1,6 +1,6 @@
 import { initializePhotosListDisplay, updateListDisplay } from "../components/PhotoListDisplay.js";
 import { initializePhotosGalleryDisplay, updateGalleryDisplay } from "../components/PhotoGalleryDisplay.js"
-
+import { initializePhotosCarouselDisplay, updateCarouselDisplay } from "../components/PhotoCarouselDisplay.js"
 import "../initialData/initialDataPhotos.js";
 import checkBussinessAccountStatus from "../utils/BussinesAccountStatusCheck.js";
 import initPopup from "../components/Popup.js";
@@ -28,6 +28,7 @@ window.addEventListener("load", () => {
     isBusinessAccount = checkBussinessAccountStatus();
     initializePhotosListDisplay(photoArr, isBusinessAccount, deletePhoto, selectedPhotoPopup);
     initializePhotosGalleryDisplay(photoArr);
+    initializePhotosCarouselDisplay(photoArr);
     elementsDefinition();
     activateButtons();
 });
@@ -44,8 +45,8 @@ const elementsDefinition = () => {
     galleryDisplayBtn = document.getElementById("homeGalleryDisplayBtn");
 
     carouselDisplayBtn = document.getElementById("homeCarouselDisplayBtn");
-    defaultDisplay = listDisplayDiv;
-    displayHandler(listDisplayDiv);
+    defaultDisplay = carouselDisplayDiv;
+    displayHandler(defaultDisplay);
 }
 
 const activateButtons = () => {
@@ -55,6 +56,10 @@ const activateButtons = () => {
 
     galleryDisplayBtn.addEventListener("click", () => {
         displayHandler(galleryDisplayDiv);
+    });
+
+    carouselDisplayBtn.addEventListener("click", () => {
+        displayHandler(carouselDisplayDiv)
     });
 
     document.getElementById("homeDisplaySearch").addEventListener("input", (ev) => {
@@ -71,6 +76,7 @@ const activateButtons = () => {
 const displayUpdate = () => {
     updateGalleryDisplay(photoArr);
     updateListDisplay(photoArr);
+    updateCarouselDisplay(photoArr);
 }
 
 const displayHandler = (chosenDisplay) => {
@@ -79,6 +85,8 @@ const displayHandler = (chosenDisplay) => {
 
     chosenDisplay.classList.add("d-block");
     chosenDisplay.classList.remove("d-none");
+
+    defaultDisplay = chosenDisplay;
 }
 
 const sortItems = (photoArr, asc = true) => {
