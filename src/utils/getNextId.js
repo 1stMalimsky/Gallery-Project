@@ -1,14 +1,14 @@
-const getNextId = () => {
-    let nextId = localStorage.getItem("nextid");
-    if (!nextId) {
-        nextId = 1;
-        return nextId;
+const getnextPhotoId = () => {
+    let nextPhotoId = localStorage.getItem("nextPhotoId");
+    if (!nextPhotoId) {
+        nextPhotoId = 1;
+        return nextPhotoId;
     }
-    nextId = +nextId;
-    if (isNaN(nextId)) {
-        nextId = 1;
+    nextPhotoId = +nextPhotoId;
+    if (isNaN(nextPhotoId)) {
+        nextPhotoId = 1;
     }
-    return nextId;
+    return nextPhotoId;
 };
 
-export default getNextId;
+export default getnextPhotoId;

@@ -16,7 +16,7 @@ const initPopup = (selectedPhotoFromHomePage, editPhotoFromHomePage) => {
         selectedPhoto = selectedPhotoFromHomePage;
         editPhotoSubmit = editPhotoFromHomePage;
     }
-    //else {    selectedProperty = new Property(getNextId(), "", 0, "", "");}
+    //else {    selectedProperty = new Property(getnextPhotoId(), "", 0, "", "");}
     //editPhoto = editPropertyFromHomePage;
     editUrlInput.value = selectedPhoto.imgUrl;
     editAlternativeInput.value = selectedPhoto.subtitle;
