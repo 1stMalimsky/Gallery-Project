@@ -85,7 +85,7 @@
 
         <!-- Home Page -->
         <div class="container">
-            <div class="d-none" id="home-page">
+            <div class="d-block" id="home-page">
                 <h1>Home Page</h1>
 
                 <div id="displayOptions" class="d-flex" style="margin-left: 5em;">
@@ -129,10 +129,10 @@
 
                 <!-- Carousel Display Div -->
                 <div id="carouselDisplayDiv" class="d-none">
-                    <h2>Slideshow Display</h2>
+                    <h2>Carousel Display</h2>
                     <hr>
                     <div id="photosCarousel" class="carousel slide w-75 mx-auto">
-                        <div class="carousel-inner" id="innerCarousel">
+                        <div class="carousel-inner mx-auto" id="innerCarousel">
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#photosCarousel"
                             data-bs-slide="prev">
@@ -284,7 +284,7 @@
 
 
             <!-- Profile page -->
-            <div class="d-block" id="profile-page">
+            <div class="d-none" id="profile-page">
                 <h1>Profile Page</h1>
                 <p>Welcome to your profile page. If you'd like to change any info about yourself you can do so below.
                 </p>
@@ -365,7 +365,7 @@
                     </div>
 
                     <!-- Profile Page-Bussiness account -->
-                    <div class="businessAcountInput" style="margin-left: 15rem">
+                    <div class="businessAcountInput d-flex justify-content-center">
                         <input type="checkbox" id="profilePage-businessCheckbox">Bussiness
                         account user
                     </div>
