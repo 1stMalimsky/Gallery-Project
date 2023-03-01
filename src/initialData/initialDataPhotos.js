@@ -10,7 +10,7 @@ const createPhotos = () => {
             "Cows in the Winter",
             "Ramtaniya - Golan Heights",
             "Alon Malimsky",
-            "450&#8362",
+            "450",
             "../../public/assets/imgs/cowsWinter.jpg",
             "10.12.2022"
         ),
@@ -19,7 +19,7 @@ const createPhotos = () => {
             "Abandoned Fortress",
             "Nimrod - Golan Heigths",
             "Yoram Arbel",
-            "500&#8362",
+            "500",
             "../../public/assets/imgs/nimrodFortress.jpg",
             "09.11.2022"
         ),
@@ -29,7 +29,7 @@ const createPhotos = () => {
             "Valley in the Sky",
             "Glacier Natioanl Park - Montana",
             "Yael Malimsky",
-            "1500&#8362",
+            "1500",
             "../../public/assets/imgs/glacierValley.jpg",
             "12.07.2022"
         ),
@@ -39,7 +39,7 @@ const createPhotos = () => {
             "St. Mary Lake at Noon",
             "Into the Sun rd. - Glacier Ntl Park",
             "Eddy Bauer",
-            "750&#8362",
+            "750",
             "../../public/assets/imgs/stMaryLake.jpg",
             "15.07.2022"
         ),
@@ -49,7 +49,7 @@ const createPhotos = () => {
             "Sedona Sunset",
             "Shnebly rd. - Arizona",
             "Boris Hill",
-            "575&#8362",
+            "575",
             "../../public/assets/imgs/sedonaSunset.jpg",
             "15.04.2022"
         ),
@@ -59,7 +59,7 @@ const createPhotos = () => {
             "A Different Dead Sea",
             "Stansbury Island - Utah",
             "Moshe Bochnick",
-            "665&#8362",
+            "665",
             "../../public/assets/imgs/stansburyIsland.jpg",
             "21.05.2022"
         )

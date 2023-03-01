@@ -10,10 +10,11 @@ const updateCarouselDisplay = (photoArrFromHomepage) => {
     createCarouselDisplay();
 };
 
-const createPhotoCarouselItem = (title, imgUrl) => {
+const createPhotoCarouselItem = (title, imgUrl, credit) => {
 
     return `<div class="carousel-item">
-                                    <img src="${imgUrl}" class="d-block w-100" alt="${title}">
+                                    <img src="${imgUrl}" class="img-fluid d-block w-100" alt="${title}">
+                                    <p>Photo taken by: ${credit}</p>
                                 </div>`
 };
 
@@ -24,6 +25,7 @@ const createCarouselDisplay = () => {
         outputStr += createPhotoCarouselItem(
             photo.title,
             photo.imgUrl,
+            photo.credit
         )
     }
 

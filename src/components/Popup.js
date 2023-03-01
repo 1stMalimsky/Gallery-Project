@@ -47,8 +47,9 @@ window.addEventListener("load", () => {
         editPhotoSubmit(selectedPhoto)
         hideEditPopup();
     });
-    editUrlInput.addEventListener("change", () => {
+    editUrlInput.addEventListener("change", (ev) => {
         imgUrlDisplay.src = editUrlInput.value;
+        console.log(ev.target);
     });
 });
 
