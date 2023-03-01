@@ -28,17 +28,17 @@
                     <a class="nav-link" href="#" id="home-page-link">Home</a>
                     <a class="nav-link" href="#" id="about-page-link">About</a>
                     <!-- This shows only if logged in -->
-                    <a class="nav-link d-none" href="#">Add Photos</a>
+                    <a class="nav-link d-none" href="#" id="addNewPhoto-link">Add Photos</a>
                 </div>
                 <!-- This shows only if not logged in -->
-                <div class="navbar-nav d-none" id="navbar-NotBusinessUser">
+                <div class="navbar-nav d-block d-flex" id="navbar-notConnected">
                     <a class="nav-link" href="#" id="signup-page-link">Signup</a>
                     <a class="nav-link" href="#" id="login-page-link">Login</a>
                 </div>
                 <!-- This shows only if logged in -->
-                <div class="navbar-nav d-block" id="navbar-businessUser">
+                <div class="navbar-nav d-none d-flex" id="navbar-connected">
                     <a class="nav-link" href="#" id="profile-page-link">Profile</a>
-                    <a class="nav-link" href="#">Logout</a>
+                    <a class="nav-link" href="#" id="logout-link">Logout</a>
                 </div>
             </div>
         </div>
@@ -85,7 +85,7 @@
 
         <!-- Home Page -->
         <div class="container">
-            <div class="d-block" id="home-page">
+            <div class="d-none" id="home-page">
                 <h1>Home Page</h1>
 
                 <div id="displayOptions" class="d-flex" style="margin-left: 5em;">
@@ -119,7 +119,7 @@
                 </div>
 
                 <!-- Gallery Display Div -->
-                <div id="galleryDisplayDiv" class="d-none" style="margin-left: 5em;">
+                <div id="galleryDisplayDiv" class="d-none">
                     <h2>Gallery Display</h2>
                     <hr>
                     <div id="photosGallery" class="d-flex flex-wrap justify-content-center">
@@ -282,17 +282,108 @@
                 </div>
             </div>
 
-            <!-- Profile page -->
-            <div class="d-none" id="profile-page">
-                <h1>Profile</h1>
-            </div>
 
-            <!-- 404 Page -->
-            <div class="d-none" id="page-not-found">
-                <h1>Page Not Found</h1>
-                <p><span style="color: blue; text-decoration: underline;" id="404backToHomepage">click here</span> to
-                    get back to home page</p>
+            <!-- Profile page -->
+            <div class="d-block" id="profile-page">
+                <h1>Profile Page</h1>
+                <p>Welcome to your profile page. If you'd like to change any info about yourself you can do so below.
+                </p>
+                <div id="signup-inputs">
+                    <!-- Profile Page-Fullname input -->
+                    <h2>Full Name</h2>
+                    <div class="d-flex flex-wrap" id="profilePage-fullName">
+                        <form class="form-floating inputForm" id="firstName-profilePage">
+                            <input type="text" class="form-control" id="profilePage-firstName">
+                            <label for="first-name">First Name<span style="color:red">*</span></label>
+                        </form>
+                        <form class="form-floating inputForm" id="lastName-profilePage">
+                            <input type="text" class="form-control" id="profilePage-lastName">
+                            <label for="last-name">Last Name<span style="color:red">*</span></label>
+                        </form>
+                        <div class="alert alert-danger d-none" id="profilePage-fullNameErrorAlerts">
+                        </div>
+                    </div>
+                    <!-- Profile Page-Address input  -->
+                    <h2>Address</h2>
+                    <div class="d-flex flex-wrap" id="profilePage-address">
+                        <form class="form-floating inputForm">
+                            <input type="text" class="form-control" id="profilePage-state">
+                            <label for="state">State</label>
+                        </form>
+                        <form class="form-floating inputForm">
+                            <input type="text" class="form-control" id="profilePage-country">
+                            <label for="country">Country</label>
+                        </form>
+                        <form class="form-floating inputForm">
+                            <input type="text" class="form-control" id="profilePage-city">
+                            <label for="city">City</label>
+                        </form>
+                        <form class="form-floating inputForm">
+                            <input type="text" class="form-control" id="profilePage-street">
+                            <label for="street">Street</label>
+                        </form>
+                        <form class="form-floating inputForm">
+                            <input type="text" class="form-control" id="profilePage-houseNumber">
+                            <label for="houseNumber">House Number</label>
+                        </form>
+                        <form class="form-floating inputForm">
+                            <input type="text" class="form-control" id="profilePage-zipcode">
+                            <label for="zipcode">Zipcode</label>
+                        </form><br>
+                        <div class="alert alert-danger d-none" id="profilePage-addressErrorAlerts">
+                        </div>
+                    </div>
+                    <!-- Profile Page-Contact details input -->
+                    <h2>Contact Details</h2>
+                    <div class="d-flex flex-wrap" id="profilePage-contactDiv">
+                        <form class="form-floating inputForm">
+                            <input type="email" class="form-control" id="profilePage-emailAddress">
+                            <label for="emailAddress">Email Address<span style="color:red">*</span></label>
+                        </form>
+                        <form class="form-floating inputForm">
+                            <input type="text" class="form-control" id="profilePage-phoneNumber">
+                            <label for="phoneNumber">Phone Number</label>
+                        </form>
+                        <div class="alert alert-danger d-none" id="profile-contact-errorAlerts">
+                        </div>
+                    </div><br>
+
+                    <!-- Profile Page-Password input -->
+                    <h2>Passwrod</h2>
+                    <div class="d-flex flex-wrap" id="profilePage-passwordDiv">
+                        <form class="form-floating inputForm">
+                            <input type="password" class="form-control" id="profilePage-password">
+                            <label for="profilePage-password">Password<span style="color:red">*</span></label>
+                        </form>
+                        <form class="form-floating inputForm">
+                            <input type="password" class="form-control" id="profilePage-confirmPassword">
+                            <label for="profilePage-confirmPassword">Confirm Password<span
+                                    style="color:red">*</span></label>
+                        </form>
+                        <div class="alert alert-danger d-none" id="profilePage-password-errorAlerts">
+                        </div>
+                    </div>
+
+                    <!-- Profile Page-Bussiness account -->
+                    <div class="businessAcountInput" style="margin-left: 15rem">
+                        <input type="checkbox" id="profilePage-businessCheckbox">Bussiness
+                        account user
+                    </div>
+                </div>
+                <div class="alert alert-danger d-none" id="profilePageErrDiv"></div>
+                <div class="alert alert-success d-none w-50" id="profilePageSuccessDiv"></div>
+                <button class="btn btn-success" disabled="false" id="profilePage-btn">
+                    Click to Submit
+                </button>
             </div>
+        </div>
+
+        <!-- 404 Page -->
+        <div class="d-none" id="page-not-found">
+            <h1>Page Not Found</h1>
+            <p><span style="color: blue; text-decoration: underline;" id="404backToHomepage">click here</span> to
+                get back to home page</p>
+        </div>
 
     </main>
     <footer></footer>

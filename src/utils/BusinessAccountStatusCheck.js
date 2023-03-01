@@ -1,5 +1,5 @@
 
-const checkBussinessAccountStatus = () => {
+const checkBusinessAccountStatus = () => {
     let loggedUser = localStorage.getItem("token");
     if (!loggedUser) {
         return false;
@@ -8,4 +8,4 @@ const checkBussinessAccountStatus = () => {
     return loggedUser.businessAccount;
 }
 
-export default checkBussinessAccountStatus;
+export default checkBusinessAccountStatus;

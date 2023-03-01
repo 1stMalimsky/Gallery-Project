@@ -2,7 +2,7 @@ import { initializePhotosListDisplay, updateListDisplay } from "../components/Ph
 import { initializePhotosGalleryDisplay, updateGalleryDisplay } from "../components/PhotoGalleryDisplay.js"
 import { initializePhotosCarouselDisplay, updateCarouselDisplay } from "../components/PhotoCarouselDisplay.js"
 import "../initialData/initialDataPhotos.js";
-import checkBussinessAccountStatus from "../utils/BussinesAccountStatusCheck.js";
+import checkBusinessAccountStatus from "../utils/BusinessAccountStatusCheck.js";
 import initPopup from "../components/Popup.js";
 
 
@@ -25,7 +25,7 @@ window.addEventListener("load", () => {
     }
     photoArr = JSON.parse(photoArr);
     storagePhotoArr = [...photoArr];
-    isBusinessAccount = checkBussinessAccountStatus();
+    isBusinessAccount = checkBusinessAccountStatus();
     initializePhotosListDisplay(photoArr, isBusinessAccount, deletePhoto, selectedPhotoPopup);
     initializePhotosGalleryDisplay(photoArr);
     initializePhotosCarouselDisplay(photoArr);
@@ -80,12 +80,21 @@ const displayUpdate = () => {
 }
 
 const displayHandler = (chosenDisplay) => {
+    if (chosenDisplay == carouselDisplayDiv) {
+        document.getElementById("sortAsc").classList.add("d-none");
+        document.getElementById("sortDec").classList.add("d-none");
+        document.getElementById("homeDisplaySearch").classList.add("d-none");
+    }
+    else {
+        document.getElementById("sortAsc").classList.remove("d-none");
+        document.getElementById("sortDec").classList.remove("d-none");
+        document.getElementById("homeDisplaySearch").classList.remove("d-none");
+    }
     defaultDisplay.classList.remove("d-block");
     defaultDisplay.classList.add("d-none");
 
     chosenDisplay.classList.add("d-block");
     chosenDisplay.classList.remove("d-none");
-
     defaultDisplay = chosenDisplay;
 }
 
