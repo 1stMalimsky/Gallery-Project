@@ -1,7 +1,7 @@
 import Photo from "../models/Photo.js";
 
 let id = 1;
-let nextPhotoId = 1;
+
 
 const createPhotos = () => {
     let initialPhotos = [

@@ -27,8 +27,7 @@ window.addEventListener("load", () => {
     if (!users || !token) {
         return;
     }
-    initProfileInfo();
-    editProfileButtonEnabler();
+    initProfileInfo()
     profileFName.addEventListener("input", () => checkProfileNameInput());
     profileLName.addEventListener("input", () => checkProfileNameInput());
 
@@ -43,7 +42,6 @@ window.addEventListener("load", () => {
 const initProfileInfo = () => {
 
     currentUserDetails = users.find(user => user.contact.email === token.email);
-
     document.getElementById("profilePage-firstName").value = currentUserDetails.name.firstName;
     document.getElementById("profilePage-lastName").value = currentUserDetails.name.lastName;
 
@@ -58,13 +56,12 @@ const initProfileInfo = () => {
     document.getElementById("profilePage-phoneNumber").value = currentUserDetails.contact.phone;
 
     let businessCheckBox = document.getElementById("profilePage-businessCheckbox");
-    if (token.businessAccount == true) {
+    if (currentUserDetails.businessAccount == true) {
         businessCheckBox.checked = true;
     }
     else {
         businessCheckBox.checked = false;
     }
-
 }
 
 const checkProfileEmailInput = () => {
@@ -84,7 +81,6 @@ const checkProfileEmailInput = () => {
     }
     editProfileButtonEnabler();
 }
-
 
 const checkProfileNameInput = () => {
     let firstNameArr = validateName(profileFName.value);
@@ -158,7 +154,10 @@ const editProfileButtonEnabler = () =>
 
 
 const editProfile = () => {
-    let userToEdit = users.find(user => currentUserDetails.id === user.id);
+    console.log("edit profile clicked");
+
+    console.log(currentUserDetails);
+    let userToEdit = users.find(item => currentUserDetails.id == item.id);
 
     userToEdit.name.firstName = document.getElementById("profilePage-firstName").value;
     userToEdit.name.lastName = document.getElementById("profilePage-lastName").value;

@@ -125,6 +125,7 @@ const selectedPhotoPopup = (id) => {
     initPopup(selectedPhoto, editPhotoSubmit);
 };
 
+
 const deletePhoto = (id) => {
     id = +id;
     storagePhotoArr = storagePhotoArr.filter((item) => item.id !== id
@@ -132,6 +133,19 @@ const deletePhoto = (id) => {
     saveToLocalStorage(storagePhotoArr);
     photoArr = photoArr.filter((item) => item.id !== id);
     displayUpdate(photoArr);
+};
+
+const addNewPhotoPopup = () => {
+    initPopup(undefined, addNewPhoto);
+};
+
+const addNewPhoto = (newPhoto) => {
+    console.log("addNewPhoto activated");
+    storagePhotoArr = [...storagePhotoArr, newPhoto];
+    let nextPhotoId = +newPhoto.id + 1;
+    localStorage.setItem("nextPhotoId", nextPhotoId + "");
+    photoArr = [...storagePhotoArr];
+    editPhotoSubmit();
 };
 
 
@@ -145,3 +159,4 @@ document.getElementById("sortDec").addEventListener("click", () => {
     displayUpdate(photoArr);
 });
 
+export { addNewPhotoPopup };

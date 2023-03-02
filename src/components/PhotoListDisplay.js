@@ -30,7 +30,7 @@ const createPhotoListItem = (photoId, title, subtitle, credit, price, imgUrl, cr
                                 <h3>${title}</h3>
                                 <h6>${subtitle}</h6>
                                 <h6>Credit: ${credit}</h6>
-                                <h6>Price: ${price} &#8362</h6>
+                                <h6>Price: ${price}&#8362</h6>
                                 <h6>Created at: ${createdAt}</h6>
                             </div>
                             <div id="listBtnsDiv-${photoId}" class="d-flex listBtns me-3">

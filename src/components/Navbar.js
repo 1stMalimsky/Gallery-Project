@@ -1,25 +1,41 @@
 import checkBusinessAccountStatus from "../utils/BusinessAccountStatusCheck.js";
+import initPopup from "./Popup.js";
+
 
 let isConnected;
 let isBusinessAccount;
+let addNewPhotoPopup;
+
+const addNewPhotoLink = document.getElementById("addNewPhoto-link")
 const notConnectedNavbar = document.getElementById("navbar-notConnected");
 const connectedNavbar = document.getElementById("navbar-connected");
-const addNewPhoto = document.getElementById("addNewPhoto-link");
 
 
-const initiateNavbar = () => {
+
+window.addEventListener("load", () => {
+
+    document.getElementById("logout-link").addEventListener("click", () => {
+        localStorage.removeItem("token");
+        location.reload();
+    })
+})
+
+
+
+const initiateNavbar = (addNewPhotoFromHomePage) => {
     isConnected = checkIfConnected();
     isBusinessAccount = checkBusinessAccountStatus();
+    addNewPhotoPopup = addNewPhotoFromHomePage;
     if (!isConnected) {
         notConnectedNavbar.classList.remove("d-none");
         connectedNavbar.classList.add("d-none");
-        addNewPhoto.classList.add("d-none");
+        addNewPhotoLink.classList.add("d-none");
     }
-
     else {
         notConnectedNavbar.classList.add("d-none");
         connectedNavbar.classList.remove("d-none");
-        addNewPhoto.classList.remove("d-none");
+        addNewPhotoLink.classList.remove("d-none");
+        addNewPhotoLink.addEventListener("click", () => addNewPhotoPopup())
     }
 }
 

@@ -5,7 +5,10 @@ import "./pages/Login.js";
 import "./pages/HomePage.js";
 import "./pages/ProfilePage.js";
 import "./initialData/initialDataPhotos.js";
-import initiateNavbar from "./components/Navbar.js"
+import initiateNavbar from "./components/Navbar.js";
+import { addNewPhotoPopup } from "./pages/HomePage.js";
+
+
 
 const navLogoLink = document.getElementById("navBarLogoImg");
 
@@ -22,15 +25,8 @@ const navProfileLink = document.getElementById("profile-page-link");
 const navPage404 = document.getElementById("page-not-found-link");
 
 window.addEventListener("load", () => {
-    initiateNavbar();
-
-    document.getElementById("logout-link").addEventListener("click", () => {
-        localStorage.removeItem("token");
-        location.reload();
-    })
+    initiateNavbar(addNewPhotoPopup);
 })
-
-
 navLogoLink.addEventListener("click", () => pageChangeHandler(PAGES.HOME));
 navHomeLink.addEventListener("click", () => pageChangeHandler(PAGES.HOME));
 navAboutLink.addEventListener("click", () => pageChangeHandler(PAGES.ABOUT));

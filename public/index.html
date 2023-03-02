@@ -49,13 +49,18 @@
         <div id="editPopupWindow" class="edit-popup-div-window d-none d-flex justify-content-center">
             <div id="editPopupWrapper" class="container edit-popup-div-wrapper">
                 <br>
-                <h1>Edit Photo</h1>
+                <h1 id="editPhotoTitle" class="d-none">Edit Photo</h1>
+                <h1 id="addNewPhotoTitle" class="d-none">Add New Photo</h1>
                 <div id="editDivInputs" class="edit-popup-div-inputs">
                     <div class="row" id="editInputsContainer">
                         <div class="col-6 editInputFields">
                             <div class="form-floating m-lg-3">
                                 <input type="text" class="editInputs form-control" id="editUrlInput">
                                 <label for="editUrlInput">Photo Url:</label>
+                            </div>
+                            <div class="form-floating m-lg-3">
+                                <input type="text" class="editInputs form-control" id="editTitleInput">
+                                <label for="editTitleInput">Photo Title:</label>
                             </div>
                             <div class="form-floating m-lg-3">
                                 <input type="text" class="editInputs form-control" id="editAlternativeInput">
@@ -74,8 +79,10 @@
                             <img src="" alt="your photo here" id="editImgUrlDisplay">
                         </div>
                         <div class="editBtn d-flex justify-content-center">
-                            <button type="button" class="btn btn-warning m-3 w-25" id="editSubmitBtn">Submit
+                            <button type="button" class="btn btn-warning m-3 w-25 d-none" id="editSubmitBtn">Submit
                                 Edit</button>
+                            <button type="button" class="btn btn-warning m-3 w-25 d-none" id="addPhotoSubmitBtn">Submit
+                                Photo</button>
                             <button type="button" class="btn btn-danger m-3 w-25" id="editCancelBtn">Cancel</button>
                         </div>
                     </div>
