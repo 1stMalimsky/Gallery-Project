@@ -176,6 +176,34 @@
     order: 3;
   }
 }
+h2 {
+  text-align: center;
+}
+
+.displayItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.displayItem .aboutUsImg {
+  width: 40vw;
+  border-radius: 25px;
+}
+.displayItem p {
+  text-align: left;
+  padding: 1rem;
+}
+
+@media (max-width: 778px) {
+  .displayItem {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .displayItem .aboutUsImg {
+    width: 75vw;
+    border-radius: 10px;
+  }
+}
 * {
   margin: 0;
   padding: 0;

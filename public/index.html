@@ -17,8 +17,9 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="./assets/imgs/Logo.png" alt="Logo" id="navBarLogoImg"
-                    style="width: 7em;"></a>
+            <a class="navbar-brand" href="#">
+                <img src="./assets/imgs/Logo.png" alt="Logo" id="navBarLogoImg" style="width: 7em;">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -92,7 +93,7 @@
 
         <!-- Home Page -->
         <div class="container">
-            <div class="d-block" id="home-page">
+            <div class="d-none" id="home-page">
                 <h1>Home Page</h1>
 
                 <div id="displayOptions" class="d-flex" style="margin-left: 5em;">
@@ -156,8 +157,68 @@
             </div>
 
             <!-- About Page -->
-            <div class="d-none" id="about-page">
+            <div class="d-block" id="about-page">
                 <h1>About Us</h1>
+                <hr>
+                <section>
+                    <p>Welcome to our online landscape photo gallery! We are passionate about showcasing the beauty of
+                        nature through
+                        photography. Our website offers a wide variety of high-quality landscape photos that capture the
+                        awe-inspiring
+                        scenery from around the world. Whether you are a photography enthusiast or simply appreciate the
+                        natural world,
+                        our collection has something for everyone.</p>
+                    <p>At Online Landscape Photo Gallery, we believe that a picture is worth a thousand words. Our aim
+                        is to bring the
+                        beauty of nature to your screens, and inspire you to explore and appreciate the world around
+                        you. We hope that
+                        our collection of photos will spark your imagination and help you to see the world in a
+                        different light.</p>
+                </section>
+
+                <section><br>
+                    <h2>Display Functions</h2>
+                    <p>We offer three main display functions to help you browse our collection:</p>
+
+                    <h3>List Display</h3>
+                    <div class="displayItem bg-danger-subtle">
+
+                        <p>Our list display allows you to view the photos in a simple and easy-to-navigate list format.
+                            You
+                            can quickly
+                            browse through the images, and click on the ones that catch your eye to see a larger
+                            version.
+                        </p>
+                        <img class="aboutUsImg" src="../public/assets/imgs/listDisplay.png" alt="list display example">
+                    </div>
+
+                    <h3>Carousel Display</h3>
+                    <div class="displayItem bg-info-subtle">
+
+                        <p>The carousel display is a more dynamic way to view the photos. You can use the arrow buttons
+                            to
+                            move between the
+                            images. This is a great way to get a feel for the
+                            range
+                            of photos we
+                            have available.</p>
+                        <img class="aboutUsImg" src="./assets/imgs/carouselDisplay.png" alt="carousel display example">
+                    </div>
+
+                    <h3>Gallery Display</h3>
+                    <div class="displayItem bg-danger-subtle">
+
+                        <p>
+                            Our gallery display is perfect for when you want to view the photos in more detail. You can
+                            click
+                            on any image to
+                            enlarge it, and then use the arrow buttons to navigate between the photos. You can also use
+                            the
+                            zoom function to
+                            get an even closer look at the details of each image.</p>
+                        <img class="aboutUsImg" src="./assets/imgs/galleryDisplay.png" alt="gallery display example">
+                    </div>
+                </section>
             </div>
 
             <!-- Signup Page -->

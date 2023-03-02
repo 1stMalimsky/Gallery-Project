@@ -1,0 +1,28 @@
+h2 {
+  text-align: center;
+}
+
+.displayItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  .aboutUsImg {
+    width: 40vw;
+    border-radius: 25px;
+  }
+  p {
+    text-align: left;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 778px) {
+  .displayItem {
+    justify-content: center;
+    flex-wrap: wrap;
+    .aboutUsImg {
+      width: 75vw;
+      border-radius: 10px;
+    }
+  }
+}
