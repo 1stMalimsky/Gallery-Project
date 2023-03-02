@@ -1,6 +1,6 @@
 import Photo from "../models/Photo.js";
 import getNextPhotoId from "../utils/getNextPhotoId.js";
-//import addNewPhoto from "../pages/HomePage.js";
+import isValidUrl from "../validation/validateUrl.js";
 
 const editSubmitBtn = document.getElementById("editSubmitBtn");
 //const editCancelBtn = document.getElementById("editCancelBtn");
@@ -13,6 +13,7 @@ const editCreditInput = document.getElementById("editCreditInput");
 const editPriceInput = document.getElementById("editPriceInput");
 const imgUrlDisplay = document.getElementById("editImgUrlDisplay");
 const addNewPhotobtn = document.getElementById("addPhotoSubmitBtn");
+const imgPreviewErrAlert = document.getElementById("imgPreviewErrAlert");
 
 let selectedPhoto;
 let editPhotoSubmit;
@@ -84,8 +85,23 @@ editSubmitBtn.addEventListener("click", () => {
     editPhotoSubmit(selectedPhoto)
     hidePhotoPopup();
 });
-editUrlInput.addEventListener("change", () => {
-    imgUrlDisplay.src = editUrlInput.value;
+
+editUrlInput.addEventListener("input", () => {
+    let url = editUrlInput.value;
+    if (isValidUrl(url) || url.endsWith(".jpg") || url.endsWith(".jpeg") || url.endsWith(".png")) {
+        console.log("img works");
+        imgUrlDisplay.src = url;
+        imgPreviewErrAlert.classList.add("d-none")
+        editSubmitBtn.disabled = false;
+    }
+    else {
+        console.log("img doesn't work");
+        imgUrlDisplay.alt = "";
+        imgUrlDisplay.src = url;
+        imgPreviewErrAlert.classList.remove("d-none")
+        imgPreviewErrAlert.innerHTML = "Image URL is invalid. Please try another URL"
+        editSubmitBtn.disabled = true;
+    }
 });
 
 const showPhotoPopup = () => {

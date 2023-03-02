@@ -10,9 +10,11 @@
 
 .edit-popup-div-wrapper {
   width: 40%;
-  height: 90%;
-  margin: 2% auto;
-  background-color: #cfcfcf;
+  height: 95%;
+  margin: 1rem auto;
+  background-image: url("/public/assets/imgs/emptyCanvas.png");
+  background-repeat: repeat;
+  background-size: auto;
   box-shadow: 0.4rem 0.4rem 2px 1px rgba(0, 0, 0, 0.5);
 }
 
@@ -26,7 +28,7 @@
 }
 
 #editInputsContainer {
-  background-color: #cbcbcb;
+  /* background-color: #cbcbcb; */
 }
 
 @media (max-width: 767px) {
@@ -120,7 +122,6 @@
 }
 
 #signup-inputs {
-  background-color: rgba(255, 244, 188, 0.2039215686);
   padding: 15px;
 }
 
@@ -136,9 +137,11 @@
 
 .edit-popup-div-wrapper {
   width: 40%;
-  height: 90%;
-  margin: 2% auto;
-  background-color: #cfcfcf;
+  height: 95%;
+  margin: 1rem auto;
+  background-image: url("/public/assets/imgs/emptyCanvas.png");
+  background-repeat: repeat;
+  background-size: auto;
   box-shadow: 0.4rem 0.4rem 2px 1px rgba(0, 0, 0, 0.5);
 }
 
@@ -152,7 +155,7 @@
 }
 
 #editInputsContainer {
-  background-color: #cbcbcb;
+  /* background-color: #cbcbcb; */
 }
 
 @media (max-width: 767px) {
@@ -176,11 +179,11 @@
     order: 3;
   }
 }
-h2 {
+/* h2 {
   text-align: center;
-}
-
+} */
 .displayItem {
+  background-color: rgba(160, 158, 158, 0.2588235294);
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
@@ -216,4 +219,14 @@ h1 {
 
 p {
   text-align: center;
+}
+
+body {
+  background-image: url("../assets/imgs/texturesWall.jpeg");
+  background-repeat: repeat;
+  background-size: auto;
+}
+
+.page {
+  background-color: rgba(235, 234, 201, 0.6);
 }/*# sourceMappingURL=index.css.map */

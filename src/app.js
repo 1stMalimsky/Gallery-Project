@@ -24,8 +24,11 @@ const navProfileLink = document.getElementById("profile-page-link");
 
 const navPage404 = document.getElementById("page-not-found-link");
 
+const aboutSignupLink = document.getElementById("aboutSignupLink")
+
 window.addEventListener("load", () => {
     initiateNavbar(addNewPhotoPopup);
+    aboutSignupLink.addEventListener("click", () => pageChangeHandler(PAGES.SIGNUP));
 })
 navLogoLink.addEventListener("click", () => pageChangeHandler(PAGES.HOME));
 navHomeLink.addEventListener("click", () => pageChangeHandler(PAGES.HOME));

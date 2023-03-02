@@ -4,15 +4,18 @@
   position: fixed;
   top: 0;
   left: 0;
+
   background-color: #ffffff8b;
   z-index: 999;
 }
 
 .edit-popup-div-wrapper {
   width: 40%;
-  height: 90%;
-  margin: 2% auto;
-  background-color: #cfcfcf;
+  height: 95%;
+  margin: 1rem auto;
+  background-image: url("/public/assets/imgs/emptyCanvas.png");
+  background-repeat: repeat;
+  background-size: auto;
   box-shadow: 0.4rem 0.4rem 2px 1px rgba(0, 0, 0, 0.5);
 }
 
@@ -26,7 +29,7 @@
 }
 
 #editInputsContainer {
-  background-color: #cbcbcb;
+  /* background-color: #cbcbcb; */
 }
 
 @media (max-width: 767px) {

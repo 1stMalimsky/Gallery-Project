@@ -58,6 +58,8 @@
                             <div class="form-floating m-lg-3">
                                 <input type="text" class="editInputs form-control" id="editUrlInput">
                                 <label for="editUrlInput">Photo Url:</label>
+                                <div class="alert alert-danger d-none" id="imgPreviewErrAlert">
+                                </div>
                             </div>
                             <div class="form-floating m-lg-3">
                                 <input type="text" class="editInputs form-control" id="editTitleInput">
@@ -76,8 +78,8 @@
                                 <label for="editPriceInput">Price:</label>
                             </div>
                         </div>
-                        <div class="col-6 editImgPreview">
-                            <img src="" alt="your photo here" id="editImgUrlDisplay">
+                        <div class="col-6 editImgPreview" id="imgPreviewDiv">
+                            <img src="" alt="Your Photo Here" id="editImgUrlDisplay">
                         </div>
                         <div class="editBtn d-flex justify-content-center">
                             <button type="button" class="btn btn-warning m-3 w-25 d-none" id="editSubmitBtn">Submit
@@ -93,7 +95,7 @@
 
         <!-- Home Page -->
         <div class="container">
-            <div class="d-none" id="home-page">
+            <div class="d-block" id="home-page">
                 <h1>Home Page</h1>
 
                 <div id="displayOptions" class="d-flex" style="margin-left: 5em;">
@@ -116,7 +118,7 @@
                     </form>
                 </div><br>
                 <!-- List Display Div -->
-                <div id="listDisplayDiv" class="d-none">
+                <div id="listDisplayDiv" class="d-none page">
                     <h2>List Display</h2>
                     <hr>
                     <div id="listDisplaywrapper" class="d-flex w-100">
@@ -127,7 +129,7 @@
                 </div>
 
                 <!-- Gallery Display Div -->
-                <div id="galleryDisplayDiv" class="d-none">
+                <div id="galleryDisplayDiv" class="d-none page">
                     <h2>Gallery Display</h2>
                     <hr>
                     <div id="photosGallery" class="d-flex flex-wrap justify-content-center">
@@ -136,7 +138,7 @@
                 </div>
 
                 <!-- Carousel Display Div -->
-                <div id="carouselDisplayDiv" class="d-none">
+                <div id="carouselDisplayDiv" class="d-none page">
                     <h2>Carousel Display</h2>
                     <hr>
                     <div id="photosCarousel" class="carousel slide w-75 mx-auto">
@@ -157,10 +159,10 @@
             </div>
 
             <!-- About Page -->
-            <div class="d-block" id="about-page">
+            <div class="d-none" id="about-page">
                 <h1>About Us</h1>
                 <hr>
-                <section>
+                <section class="page">
                     <p>Welcome to our online landscape photo gallery! We are passionate about showcasing the beauty of
                         nature through
                         photography. Our website offers a wide variety of high-quality landscape photos that capture the
@@ -173,27 +175,29 @@
                         beauty of nature to your screens, and inspire you to explore and appreciate the world around
                         you. We hope that
                         our collection of photos will spark your imagination and help you to see the world in a
-                        different light.</p>
+                        different light. If you're looking to do more than browse, consider signing up to our
+                        website.<br><span class="fw-semibold">
+                            Users who sign up can upload their own photos and edit photo details. to sign up <a href="#"
+                                id="aboutSignupLink">click here</a></span></p>
                 </section>
 
-                <section><br>
+                <section class="page"><br>
                     <h2>Display Functions</h2>
                     <p>We offer three main display functions to help you browse our collection:</p>
 
                     <h3>List Display</h3>
-                    <div class="displayItem bg-danger-subtle">
+                    <div class="displayItem">
 
                         <p>Our list display allows you to view the photos in a simple and easy-to-navigate list format.
                             You
                             can quickly
-                            browse through the images, and click on the ones that catch your eye to see a larger
-                            version.
+                            browse through the images.
                         </p>
                         <img class="aboutUsImg" src="../public/assets/imgs/listDisplay.png" alt="list display example">
                     </div>
 
                     <h3>Carousel Display</h3>
-                    <div class="displayItem bg-info-subtle">
+                    <div class="displayItem">
 
                         <p>The carousel display is a more dynamic way to view the photos. You can use the arrow buttons
                             to
@@ -206,23 +210,18 @@
                     </div>
 
                     <h3>Gallery Display</h3>
-                    <div class="displayItem bg-danger-subtle">
+                    <div class="displayItem">
 
                         <p>
-                            Our gallery display is perfect for when you want to view the photos in more detail. You can
-                            click
-                            on any image to
-                            enlarge it, and then use the arrow buttons to navigate between the photos. You can also use
-                            the
-                            zoom function to
-                            get an even closer look at the details of each image.</p>
+                            Our gallery display is a great alternative to our list display. Here all the photos are
+                            displayed next to each other, which gives you a broader perspective</p>
                         <img class="aboutUsImg" src="./assets/imgs/galleryDisplay.png" alt="gallery display example">
                     </div>
                 </section>
             </div>
 
             <!-- Signup Page -->
-            <div class="container d-none" id="signup-page">
+            <div class="container d-none page" id="signup-page">
                 <h1>Signup</h1>
                 <div id="sign-up-para">
                     <p>We're delighted to hear you'd like to join our community. Please fill out the form below to
@@ -318,11 +317,8 @@
                 </button>
             </div>
 
-
-
-
             <!-- Login Page -->
-            <div class="d-none container" id="login-page">
+            <div class="d-none container page" id="login-page">
                 <h1>Login</h1>
                 <p>Please enter you email address and pasword to log in. If you haven't singed up yet, visit our <a
                         href="#" id="login-signupLink">signup page</a>.</p>
@@ -356,7 +352,7 @@
                 <h1>Profile Page</h1>
                 <p>Welcome to your profile page. If you'd like to change any info about yourself you can do so below.
                 </p>
-                <div id="signup-inputs">
+                <div class="page" id="profile-inputs">
                     <!-- Profile Page-Fullname input -->
                     <h2>Full Name</h2>
                     <div class="d-flex flex-wrap" id="profilePage-fullName">
@@ -447,7 +443,7 @@
         </div>
 
         <!-- 404 Page -->
-        <div class="d-none" id="page-not-found">
+        <div class="d-none page" id="page-not-found">
             <h1>Page Not Found</h1>
             <p><span style="color: blue; text-decoration: underline;" id="404backToHomepage">click here</span> to
                 get back to home page</p>
