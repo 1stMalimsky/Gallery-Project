@@ -1,3 +1,9 @@
+import { clearBtnsEventListener, addBtnsEventListener } from "../utils/BtnEventHandlers.js";
+import { pageChangeHandler } from "../routes/router.js";
+import PAGES from "../models/PageModel.js";
+import { handleBuyBtnClick } from "./PhotoListDisplay.js";
+
+
 const galleryDiv = document.getElementById("photosGallery");
 let photoArr;
 
@@ -22,7 +28,7 @@ const createPhotoGalleryItem = (photoId, title, subtitle, credit, price, imgUrl,
                                 <h6>Created at: ${createdAt}</h6>
                             </div>
                             <div id="galleryBtnsDiv-${photoId}" class="d-flex galleryBtns me-3">
-                                <button class="btn btn-success m-1 galleryBtn"><i class="bi bi-bag-fill" id="galleryBuyButton-${photoId}"></i>
+                                <button id="galleryBuyButton-${photoId}" class="btn btn-success m-1 galleryBtn"><i class="bi bi-bag-fill" ></i>
                                     Buy</button>
                             </div>
                         </div>`
@@ -31,6 +37,7 @@ const createPhotoGalleryItem = (photoId, title, subtitle, credit, price, imgUrl,
 
 const createGalleryDisplay = () => {
     let outputStr = "";
+    clearBtnsEventListener("listBuyButton", handleBuyBtnClick);
     for (let photo of photoArr) {
         outputStr += createPhotoGalleryItem(
             photo.id,
@@ -43,6 +50,7 @@ const createGalleryDisplay = () => {
         )
     }
     galleryDiv.innerHTML = outputStr;
+    addBtnsEventListener("listBuyButton", handleBuyBtnClick);
 }
 
 export { initializePhotosGalleryDisplay, updateGalleryDisplay };

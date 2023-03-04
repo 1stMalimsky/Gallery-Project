@@ -4,6 +4,7 @@ import "./pages/Signup.js";
 import "./pages/Login.js";
 import "./pages/HomePage.js";
 import "./pages/ProfilePage.js";
+import "./pages/Page404.js";
 import "./initialData/initialDataPhotos.js";
 import initiateNavbar from "./components/Navbar.js";
 import { addNewPhotoPopup } from "./pages/HomePage.js";
@@ -36,6 +37,6 @@ navAboutLink.addEventListener("click", () => pageChangeHandler(PAGES.ABOUT));
 navSignupLink.addEventListener("click", () => pageChangeHandler(PAGES.SIGNUP));
 navLoginLink.addEventListener("click", () => pageChangeHandler(PAGES.LOGIN));
 navProfileLink.addEventListener("click", () => pageChangeHandler(PAGES.PROFILE));
-navPage404.addEventListener("click", () => pageChangeHandler(PAGES.PAGE404));
+
 
 

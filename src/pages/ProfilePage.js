@@ -13,6 +13,7 @@ const profilePassword = document.getElementById("profilePage-password");
 const profileConfirmPassword = document.getElementById("profilePage-confirmPassword");
 const editProfileBtn = document.getElementById("profilePage-btn");
 const editProfileSuccessDiv = document.getElementById("profilePageSuccessDiv");
+const businessCheckBox = document.getElementById("profilePage-businessCheckbox");
 
 let profileUserNameCheck = false;
 let profileUserEmailCheck = false;
@@ -28,6 +29,7 @@ window.addEventListener("load", () => {
         return;
     }
     initProfileInfo()
+    checkProfilePassowrdInput()
     profileFName.addEventListener("input", () => checkProfileNameInput());
     profileLName.addEventListener("input", () => checkProfileNameInput());
 
@@ -55,13 +57,6 @@ const initProfileInfo = () => {
     document.getElementById("profilePage-emailAddress").value = currentUserDetails.contact.email;
     document.getElementById("profilePage-phoneNumber").value = currentUserDetails.contact.phone;
 
-    let businessCheckBox = document.getElementById("profilePage-businessCheckbox");
-    if (currentUserDetails.businessAccount == true) {
-        businessCheckBox.checked = true;
-    }
-    else {
-        businessCheckBox.checked = false;
-    }
 }
 
 const checkProfileEmailInput = () => {
@@ -154,10 +149,9 @@ const editProfileButtonEnabler = () =>
 
 
 const editProfile = () => {
-    console.log("edit profile clicked");
 
-    console.log(currentUserDetails);
     let userToEdit = users.find(item => currentUserDetails.id == item.id);
+    console.log(userToEdit);
 
     userToEdit.name.firstName = document.getElementById("profilePage-firstName").value;
     userToEdit.name.lastName = document.getElementById("profilePage-lastName").value;
@@ -173,6 +167,15 @@ const editProfile = () => {
     userToEdit.contact.phone = document.getElementById("profilePage-phoneNumber").value;
     userToEdit.password = document.getElementById("profilePage-password").value;
 
+    if (businessCheckBox.checked) {
+        userToEdit.businessAccount = true;
+        token.businessAccount = true;
+    }
+    else {
+        userToEdit.businessAccount = false;
+        token.businessAccount = false;
+    }
+
     users = users.map(user => {
         if (user.id === userToEdit.id) {
             user === userToEdit;
@@ -181,9 +184,9 @@ const editProfile = () => {
 
         editProfileSuccessDiv.classList.remove("d-none");
         editProfileSuccessDiv.innerHTML = "Edit Successful!";
-        setTimeout(() => {
+        /* setTimeout(() => {
             editProfileSuccessDiv.classList.add("d-none");
             pageChangeHandler(PAGES.HOME);
-        }, 2500);
+        }, 2500); */
     });
 }
