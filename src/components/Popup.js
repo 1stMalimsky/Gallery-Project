@@ -3,8 +3,6 @@ import getNextPhotoId from "../utils/getNextPhotoId.js";
 import isValidUrl from "../validation/validateUrl.js";
 
 const editSubmitBtn = document.getElementById("editSubmitBtn");
-//const editCancelBtn = document.getElementById("editCancelBtn");
-
 const editPopupWindow = document.getElementById("editPopupWindow");
 const editUrlInput = document.getElementById("editUrlInput");
 const editTitleInput = document.getElementById("editTitleInput");
@@ -58,8 +56,12 @@ window.addEventListener("load", () => {
             ev.target.id == "editCancelBtn"
         ) {
             hidePhotoPopup();
+            addNewPhotobtn.disabled = true;
+            editSubmitBtn.disabled = true;
         }
     })
+
+
 });
 
 addNewPhotobtn.addEventListener("click", () => {
@@ -84,6 +86,7 @@ editSubmitBtn.addEventListener("click", () => {
     selectedPhoto.price = editPriceInput.value;
     editPhotoSubmit(selectedPhoto)
     hidePhotoPopup();
+    editSubmitBtn.disabled = true;
 });
 
 editUrlInput.addEventListener("input", () => {

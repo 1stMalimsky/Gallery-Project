@@ -1,12 +1,22 @@
-/* h2 {
-  text-align: center;
-} */
+section {
+  box-shadow: 0.2rem 0.2rem 1px 1px rgba(0, 0, 0, 0.5);
+  h3 {
+    text-decoration: underline;
+    margin-left: 1rem;
+  }
+  p {
+    font-weight: 400;
+    font-size: 1.2em;
+    padding: 1rem;
+  }
+}
 
 .displayItem {
+  box-shadow: 0 10px 25px 5px rgba(0, 0, 0, 0.7);
   background-color: #a09e9e42;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  margin: 0.7rem 0 1rem 0;
   .aboutUsImg {
     width: 40vw;
     border-radius: 25px;

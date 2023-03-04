@@ -18,7 +18,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="./assets/imgs/Logo.png" alt="Logo" id="navBarLogoImg" style="width: 7em;">
+                <img src="./assets/imgs/Logo.png" alt="Logo" id="navBarLogoImg">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,7 +46,7 @@
     </nav>
     <main>
 
-        <!-- Edit popup window -->
+        <!--  Popup window -->
         <div id="editPopupWindow" class="edit-popup-div-window d-none d-flex justify-content-center">
             <div id="editPopupWrapper" class="container edit-popup-div-wrapper">
                 <br>
@@ -79,7 +79,7 @@
                             </div>
                         </div>
                         <div class="col-6 editImgPreview" id="imgPreviewDiv">
-                            <img src="" alt="Your Photo Here" id="editImgUrlDisplay">
+                            <img src="" alt="Your Photo Will Display Here" id="editImgUrlDisplay">
                         </div>
                         <div class="editBtn d-flex justify-content-center">
                             <button type="button" class="btn btn-warning m-3 w-25 d-none" id="editSubmitBtn">Submit
@@ -99,18 +99,18 @@
                 <h1>Home Page</h1>
 
                 <div id="displayOptions" class="d-flex" style="margin-left: 5em;">
-                    <button type="button" class="btn btn-info me-1" id="homeListDisplayBtn"><i
+                    <button type="button" class="btn btn-secondary me-1 displayBtn" id="homeListDisplayBtn"><i
                             class=" bi bi-list-ul"></i>
                     </button>
-                    <button type="button" class="btn btn-info me-1" id="homeGalleryDisplayBtn"><i
+                    <button type="button" class="btn btn-secondary me-1 displayBtn" id="homeGalleryDisplayBtn"><i
                             class="bi bi-microsoft"></i>
                     </button>
-                    <button type="button" class="btn btn-info me-1" id="homeCarouselDisplayBtn"><i
+                    <button type="button" class="btn btn-secondary me-1 displayBtn" id="homeCarouselDisplayBtn"><i
                             class="bi bi-collection-play-fill"></i>
                     </button>
-                    <button type="button" class="btn btn-outline-dark me-1" id="sortAsc"><i
+                    <button type="button" class="btn btn-outline-dark me-1 sortBtn" id="sortAsc"><i
                             class="bi bi-sort-alpha-down"></i></button>
-                    <button type="button" class="btn btn-outline-dark me-1" id="sortDec"><i
+                    <button type="button" class="btn btn-outline-dark me-1 sortBtn" id="sortDec"><i
                             class="bi bi-sort-alpha-up"></i></button>
                     <form class="d-flex align-self-end" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
@@ -142,7 +142,7 @@
                     <h2>Carousel Display</h2>
                     <hr>
                     <div id="photosCarousel" class="carousel slide w-75 mx-auto">
-                        <div class="carousel-inner mx-auto" id="innerCarousel">
+                        <div class="carousel-inner mb-5" id="innerCarousel">
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#photosCarousel"
                             data-bs-slide="prev">

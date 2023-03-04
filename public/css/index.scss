@@ -3,26 +3,88 @@
 @import "_registerPage";
 @import "_editPopup";
 @import "_aboutUs";
+@import url("https://fonts.googleapis.com/css2?family=Gloock&family=Roboto:wght@400;500&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-h1 {
-  text-align: center;
-}
-
-p {
-  text-align: center;
-}
-
 body {
   background-image: url("../assets/imgs/texturesWall.jpeg");
   background-repeat: repeat;
   background-size: auto;
 }
 
+a {
+  font-family: "glook";
+}
+h1 {
+  font-family: "glook";
+  text-align: center;
+}
+
+h2 {
+  font-family: "glook";
+}
+
+h3 {
+  font-family: "glook";
+}
+
+p {
+  text-align: center;
+  font-family: "roboto";
+  font-weight: 400;
+}
+
+nav {
+  #navBarLogoImg {
+    width: 10em;
+  }
+
+  #navbarNavAltMarkup {
+    a {
+      color: black;
+      margin: 0 0.8rem 0 0.8rem;
+      font-size: 1.4rem;
+    }
+
+    a:hover {
+      transition: all 200ms ease-in-out;
+      text-shadow: 0.5rem 0.5rem 10px rgba(43, 5, 72, 0.8);
+      font-size: 1.5rem;
+    }
+  }
+}
+
 .page {
-  background-color: #ebeac999;
+  background-color: rgba(235, 234, 201, 0.6);
+}
+
+#photosCarousel {
+  box-shadow: 0.6rem 0.6rem 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.displayBtn {
+  background-color: rgba(43, 5, 72, 1) !important;
+  border: none !important;
+
+  &:hover {
+    background-color: rgba(43, 5, 72, 1) !important;
+
+    box-shadow: 0 0 5px 3px rgba(43, 5, 72, 1) !important;
+  }
+}
+
+.sortBtn {
+  &:hover {
+    background-color: rgba(43, 5, 72, 1) !important;
+
+    box-shadow: 0 0 5px 3px rgba(43, 5, 72, 1) !important;
+  }
+}
+
+#addNewPhotoTitle {
+  text-decoration: underline;
 }

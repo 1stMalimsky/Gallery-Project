@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Gloock&family=Roboto:wght@400;500&display=swap");
 .edit-popup-div-window {
   width: 100%;
   height: 100%;
@@ -179,14 +180,25 @@
     order: 3;
   }
 }
-/* h2 {
-  text-align: center;
-} */
+section {
+  box-shadow: 0.2rem 0.2rem 1px 1px rgba(0, 0, 0, 0.5);
+}
+section h3 {
+  text-decoration: underline;
+  margin-left: 1rem;
+}
+section p {
+  font-weight: 400;
+  font-size: 1.2em;
+  padding: 1rem;
+}
+
 .displayItem {
+  box-shadow: 0 10px 25px 5px rgba(0, 0, 0, 0.7);
   background-color: rgba(160, 158, 158, 0.2588235294);
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  margin: 0.7rem 0 1rem 0;
 }
 .displayItem .aboutUsImg {
   width: 40vw;
@@ -213,20 +225,71 @@
   box-sizing: border-box;
 }
 
-h1 {
-  text-align: center;
-}
-
-p {
-  text-align: center;
-}
-
 body {
   background-image: url("../assets/imgs/texturesWall.jpeg");
   background-repeat: repeat;
   background-size: auto;
 }
 
+a {
+  font-family: "glook";
+}
+
+h1 {
+  font-family: "glook";
+  text-align: center;
+}
+
+h2 {
+  font-family: "glook";
+}
+
+h3 {
+  font-family: "glook";
+}
+
+p {
+  text-align: center;
+  font-family: "roboto";
+  font-weight: 400;
+}
+
+nav #navBarLogoImg {
+  width: 10em;
+}
+nav #navbarNavAltMarkup a {
+  color: black;
+  margin: 0 0.8rem 0 0.8rem;
+  font-size: 1.4rem;
+}
+nav #navbarNavAltMarkup a:hover {
+  transition: all 200ms ease-in-out;
+  text-shadow: 0.5rem 0.5rem 10px rgba(43, 5, 72, 0.8);
+  font-size: 1.5rem;
+}
+
 .page {
   background-color: rgba(235, 234, 201, 0.6);
+}
+
+#photosCarousel {
+  box-shadow: 0.6rem 0.6rem 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.displayBtn {
+  background-color: rgb(43, 5, 72) !important;
+  border: none !important;
+}
+.displayBtn:hover {
+  background-color: rgb(43, 5, 72) !important;
+  box-shadow: 0 0 5px 3px rgb(43, 5, 72) !important;
+}
+
+.sortBtn:hover {
+  background-color: rgb(43, 5, 72) !important;
+  box-shadow: 0 0 5px 3px rgb(43, 5, 72) !important;
+}
+
+#addNewPhotoTitle {
+  text-decoration: underline;
 }/*# sourceMappingURL=index.css.map */

@@ -20,11 +20,13 @@ const updateListDisplay = (photoArrFromHomepage) => {
 };
 
 const createPhotoListItem = (photoId, title, subtitle, credit, price, imgUrl, createdAt) => {
+
+
     let businessAccountBtns = `<button class="btn btn-warning m-1 listBtn" id="listEditButton-${photoId}"><i class="bi bi-pencil-fill"></i> Edit</button>
                             <button class="listBtn btn btn-danger m-1" id="listDeleteButton-${photoId}"><i class="bi bi-trash3-fill"></i> Delete</button>`
 
-    return `<div id="listItem-${photoId}" class="d-flex flex-wrap justify-content-between mb-3 ms-1 listGenItem w-100" style="box-shadow: 0.2rem 0.2rem 1px 1px rgba(0, 0, 0, 0.3);">
-                            <img src="${imgUrl}" alt="${title}" id="listDisplayImg-${photoId}" class="listImg"
+    return `<div id="listItem-${photoId}" class="d-flex flex-wrap justify-content-between mb-3 ms-1 listGenItem w-100" style="box-shadow: 0.2rem 0.2rem 1px 1px rgba(0, 0, 0, 0.5);">
+                            <img src="${imgUrl}" alt="${title}" id="listDisplayImg-${photoId}" class="listImg ms-2"
                                 style="width: 15em">
                             <div id="listDescription-${photoId}" class="listDescription ms-3 me-1">
                                 <h3>${title}</h3>
