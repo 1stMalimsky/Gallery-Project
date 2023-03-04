@@ -22,6 +22,9 @@ a {
 h1 {
   font-family: "glook";
   text-align: center;
+  text-decoration: underline;
+  text-shadow: -1px -1px 1rem white, 1px -1px 1rem white, -1px 1px 1rem white,
+    1px 1px 1rem white;
 }
 
 h2 {
@@ -52,8 +55,7 @@ nav {
 
     a:hover {
       transition: all 200ms ease-in-out;
-      text-shadow: 0.5rem 0.5rem 10px rgba(43, 5, 72, 0.8);
-      font-size: 1.5rem;
+      text-shadow: 0.5rem 0.5rem 10px rgba(43, 5, 72, 1);
     }
   }
 }
