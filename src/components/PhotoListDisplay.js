@@ -1,4 +1,6 @@
 import { clearBtnsEventListener, addBtnsEventListener } from "../utils/BtnEventHandlers.js";
+import { pageChangeHandler } from "../routes/router.js";
+import PAGES from "../models/PageModel.js";
 
 
 const listDiv = document.getElementById("photosList");
@@ -34,7 +36,7 @@ const createPhotoListItem = (photoId, title, subtitle, credit, price, imgUrl, cr
                                 <h6>Created at: ${createdAt}</h6>
                             </div>
                             <div id="listBtnsDiv-${photoId}" class="d-flex listBtns me-3">
-                            <button class="btn btn-success m-1 listBtn"><i class="bi bi-bag-fill" id="listBuyButton-${photoId}"></i> Buy</button>
+                            <button id="listBuyButton-${photoId}" class="btn btn-success m-1 listBtn"><i class="bi bi-bag-fill" ></i> Buy</button>
                             ${businessAccountStatus ? businessAccountBtns : ""}
                             </div>
             </div>`
@@ -58,11 +60,16 @@ const handleEditBtnClick = (ev) => {
     selectedPhotoPopup(getIdFromClick(ev));
 };
 
+const handleBuyBtnClick = () => {
+    pageChangeHandler(PAGES.PAGE404);
+}
+
 
 const createListDisplay = () => {
     let outputStr = "";
     clearBtnsEventListener("listDeleteButton", handleDeleteBtnClick);
     clearBtnsEventListener("listEditButton", handleEditBtnClick);
+    clearBtnsEventListener("listBuyButton", handleBuyBtnClick);
     for (let photo of photoArr) {
         outputStr += createPhotoListItem(
             photo.id,
@@ -77,8 +84,9 @@ const createListDisplay = () => {
     listDiv.innerHTML = outputStr;
     addBtnsEventListener("listDeleteButton", handleDeleteBtnClick);
     addBtnsEventListener("listEditButton", handleEditBtnClick);
+    addBtnsEventListener("listBuyButton", handleBuyBtnClick);
 }
 
-export { initializePhotosListDisplay, updateListDisplay };
+export { initializePhotosListDisplay, updateListDisplay, handleBuyBtnClick };
 
 
