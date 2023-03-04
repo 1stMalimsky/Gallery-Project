@@ -38,12 +38,15 @@ window.addEventListener("load", () => {
     profilePassword.addEventListener("input", () => checkProfilePassowrdInput());
     profileConfirmPassword.addEventListener("input", () => checkProfilePassowrdInput());
 
-    editProfileBtn.addEventListener("click", () => editProfile())
+    editProfileBtn.addEventListener("click", () => {
+        editProfile()
+        console.log(users);
+    })
 })
 
 const initProfileInfo = () => {
-
-    currentUserDetails = users.find(user => user.contact.email === token.email);
+    currentUserDetails = users.find(obj => obj.contact.email === token.email);
+    console.log(currentUserDetails);
     document.getElementById("profilePage-firstName").value = currentUserDetails.name.firstName;
     document.getElementById("profilePage-lastName").value = currentUserDetails.name.lastName;
 
@@ -151,10 +154,11 @@ const editProfileButtonEnabler = () =>
 const editProfile = () => {
 
     let userToEdit = users.find(item => currentUserDetails.id == item.id);
-    console.log(userToEdit);
 
     userToEdit.name.firstName = document.getElementById("profilePage-firstName").value;
+    token.name.firstName = document.getElementById("profilePage-firstName").value;
     userToEdit.name.lastName = document.getElementById("profilePage-lastName").value;
+    token.name.lastName = document.getElementById("profilePage-lastName").value;
 
     userToEdit.address.state = document.getElementById("profilePage-state").value;
     userToEdit.address.country = document.getElementById("profilePage-country").value;
@@ -164,6 +168,7 @@ const editProfile = () => {
     userToEdit.address.zipCode = document.getElementById("profilePage-zipcode").value;
 
     userToEdit.contact.email = document.getElementById("profilePage-emailAddress").value;
+    token.email = document.getElementById("profilePage-emailAddress").value;
     userToEdit.contact.phone = document.getElementById("profilePage-phoneNumber").value;
     userToEdit.password = document.getElementById("profilePage-password").value;
 
@@ -181,12 +186,14 @@ const editProfile = () => {
             user === userToEdit;
         }
         localStorage.setItem("users", JSON.stringify(users));
+        localStorage.setItem("token", JSON.stringify(token));
 
         editProfileSuccessDiv.classList.remove("d-none");
         editProfileSuccessDiv.innerHTML = "Edit Successful!";
-        /* setTimeout(() => {
+        console.log(users);
+        setTimeout(() => {
             editProfileSuccessDiv.classList.add("d-none");
-            pageChangeHandler(PAGES.HOME);
-        }, 2500); */
+            location.reload();
+        }, 2500);
     });
 }
