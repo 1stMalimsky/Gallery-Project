@@ -1,8 +1,4 @@
-import { clearBtnsEventListener, addBtnsEventListener } from "../utils/BtnEventHandlers.js";
-import { pageChangeHandler } from "../routes/router.js";
-import PAGES from "../models/PageModel.js";
-import { handleBuyBtnClick } from "./PhotoListDisplay.js";
-
+import { clearBtnsEventListener, addBtnsEventListener, handleBuyBtnClick } from "../utils/BtnEventHandlers.js";
 
 const galleryDiv = document.getElementById("photosGallery");
 let photoArr;
@@ -37,7 +33,7 @@ const createPhotoGalleryItem = (photoId, title, subtitle, credit, price, imgUrl,
 
 const createGalleryDisplay = () => {
     let outputStr = "";
-    clearBtnsEventListener("listBuyButton", handleBuyBtnClick);
+    clearBtnsEventListener("galleryBuyButton", handleBuyBtnClick);
     for (let photo of photoArr) {
         outputStr += createPhotoGalleryItem(
             photo.id,
@@ -50,7 +46,7 @@ const createGalleryDisplay = () => {
         )
     }
     galleryDiv.innerHTML = outputStr;
-    addBtnsEventListener("listBuyButton", handleBuyBtnClick);
+    addBtnsEventListener("galleryBuyButton", handleBuyBtnClick);
 }
 
 export { initializePhotosGalleryDisplay, updateGalleryDisplay };

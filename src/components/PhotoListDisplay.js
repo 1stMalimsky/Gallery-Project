@@ -1,6 +1,4 @@
-import { clearBtnsEventListener, addBtnsEventListener } from "../utils/BtnEventHandlers.js";
-import { pageChangeHandler } from "../routes/router.js";
-import PAGES from "../models/PageModel.js";
+import { clearBtnsEventListener, addBtnsEventListener, handleBuyBtnClick } from "../utils/BtnEventHandlers.js";
 
 
 const listDiv = document.getElementById("photosList");
@@ -59,10 +57,6 @@ const handleDeleteBtnClick = (ev) => {
 const handleEditBtnClick = (ev) => {
     selectedPhotoPopup(getIdFromClick(ev));
 };
-
-const handleBuyBtnClick = () => {
-    pageChangeHandler(PAGES.PAGE404);
-}
 
 
 const createListDisplay = () => {

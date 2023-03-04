@@ -1,3 +1,6 @@
+import { pageChangeHandler } from "../routes/router.js";
+import PAGES from "../models/PageModel.js";
+
 const addBtnsEventListener = (buttonIdKeyword, functionAction) => {
     let btns = document.querySelectorAll(`[id^='${buttonIdKeyword}-']`);
     for (let btn of btns) {
@@ -12,6 +15,8 @@ const clearBtnsEventListener = (buttonIdKeyword, functionAction) => {
     };
 }
 
+const handleBuyBtnClick = () => {
+    pageChangeHandler(PAGES.PAGE404);
+}
 
-
-export { addBtnsEventListener, clearBtnsEventListener };
+export { addBtnsEventListener, clearBtnsEventListener, handleBuyBtnClick };
