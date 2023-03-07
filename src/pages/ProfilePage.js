@@ -45,8 +45,8 @@ window.addEventListener("load", () => {
 
 const initProfileInfo = () => {
     currentUserDetails = users.find(obj => obj.contact.email === token.email);
-    document.getElementById("profilePage-firstName").value = currentUserDetails.name.firstName;
-    document.getElementById("profilePage-lastName").value = currentUserDetails.name.lastName;
+    profileFName.value = currentUserDetails.name.firstName;
+    profileLName.value = currentUserDetails.name.lastName;
 
     document.getElementById("profilePage-state").value = currentUserDetails.address.state;
     document.getElementById("profilePage-country").value = currentUserDetails.address.country;
@@ -55,8 +55,15 @@ const initProfileInfo = () => {
     document.getElementById("profilePage-houseNumber").value = currentUserDetails.address.houseNumber;
     document.getElementById("profilePage-zipcode").value = currentUserDetails.address.zipCode;
 
-    document.getElementById("profilePage-emailAddress").value = currentUserDetails.contact.email;
+    profileEmail.value = currentUserDetails.contact.email;
     document.getElementById("profilePage-phoneNumber").value = currentUserDetails.contact.phone;
+
+    if (currentUserDetails.businessAccount == true) {
+        businessCheckBox.checked = true;
+    }
+    else {
+        businessCheckBox.checked = false;
+    }
 
 }
 

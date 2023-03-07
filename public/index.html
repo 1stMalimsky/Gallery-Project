@@ -108,7 +108,7 @@
         <div class="container">
             <div class="d-block" id="home-page">
                 <h1>Home Page</h1>
-
+                <h5>Display Options:</h5>
                 <div id="displayOptions" class="d-flex flex-wrap">
                     <button type="button" class="btn btn-secondary me-1 displayBtn" id="homeListDisplayBtn"><i
                             class=" bi bi-list-ul"></i>
@@ -196,7 +196,8 @@
                     <h2>Display Functions</h2>
                     <p>We offer three main display functions to help you browse our collection:</p>
 
-                    <h3>List Display</h3>
+                    <h3>List Display <span class="ms-2 mb-1 btn btn-secondary displayBtn"><i
+                                class=" bi bi-list-ul"></span></i></h3>
                     <div class="displayItem">
 
                         <p>Our list display allows you to view the photos in a simple and easy-to-navigate list format.
@@ -207,7 +208,19 @@
                         <img class="aboutUsImg" src="../public/assets/imgs/listDisplay.png" alt="list display example">
                     </div>
 
-                    <h3>Carousel Display</h3>
+                    <h3>Gallery Display <span><i
+                                class="btn btn-secondary bi bi-microsoft ms-2 mb-1 displayBtn"></i></span></h3>
+                    <div class="displayItem">
+
+                        <p>
+                            Our gallery display is a great alternative to our list display. Here all the photos are
+                            displayed next to each other, which gives you a broader perspective</p>
+                        <img class="aboutUsImg" src="./assets/imgs/galleryDisplay.png" alt="gallery display example">
+                    </div>
+
+                    <h3>Carousel Display <span><i
+                                class="btn btn-secondary bi bi-collection-play-fill displayBtn ms-2 mb-1"></i></span>
+                    </h3>
                     <div class="displayItem">
 
                         <p>The carousel display is a more dynamic way to view the photos. You can use the arrow buttons
@@ -220,14 +233,7 @@
                         <img class="aboutUsImg" src="./assets/imgs/carouselDisplay.png" alt="carousel display example">
                     </div>
 
-                    <h3>Gallery Display</h3>
-                    <div class="displayItem">
 
-                        <p>
-                            Our gallery display is a great alternative to our list display. Here all the photos are
-                            displayed next to each other, which gives you a broader perspective</p>
-                        <img class="aboutUsImg" src="./assets/imgs/galleryDisplay.png" alt="gallery display example">
-                    </div>
                 </section>
             </div>
 
@@ -259,41 +265,41 @@
                     <h2>Address</h2>
                     <div class="d-flex flex-wrap" id="sign-up-address">
                         <form class="form-floating inputForm">
-                            <input type="text" class="form-control" id="signup-state">
+                            <input type="text" class="form-control" id="signup-state" maxlength="20">
                             <label for="state">State</label>
                         </form>
                         <form class="form-floating inputForm">
-                            <input type="text" class="form-control" id="signup-country">
+                            <input type="text" class="form-control" id="signup-country" maxlength="20">
                             <label for="country">Country</label>
                         </form>
                         <form class="form-floating inputForm">
-                            <input type="text" class="form-control" id="signup-city">
+                            <input type="text" class="form-control" id="signup-city" maxlength="20">
                             <label for="city">City</label>
                         </form>
                         <form class="form-floating inputForm">
-                            <input type="text" class="form-control" id="signup-street">
+                            <input type="text" class="form-control" id="signup-street" maxlength="20">
                             <label for="street">Street</label>
                         </form>
                         <form class="form-floating inputForm">
-                            <input type="text" class="form-control" id="signup-houseNumber">
+                            <input type="text" class="form-control" id="signup-houseNumber" maxlength="20">
                             <label for="houseNumber">House Number</label>
                         </form>
                         <form class="form-floating inputForm">
-                            <input type="text" class="form-control" id="signup-zipcode">
+                            <input type="text" class="form-control" id="signup-zipcode" maxlength="20">
                             <label for="zipcode">Zipcode</label>
                         </form><br>
-                        <div class="alert alert-danger d-none" id="addressErrorAlerts">
+                        <div class="alert alert-danger d-none" id="addressErrorAlerts" maxlength="20">
                         </div>
                     </div>
                     <!-- Contact details input -->
                     <h2>Contact Details</h2>
                     <div class="d-flex flex-wrap" id="signup-contactDiv">
                         <form class="form-floating inputForm">
-                            <input type="email" class="form-control" id="signup-emailAddress">
+                            <input type="email" class="form-control" id="signup-emailAddress" maxlength="50">
                             <label for="emailAddress">Email Address<span style="color:red">*</span></label>
                         </form>
                         <form class="form-floating inputForm">
-                            <input type="text" class="form-control" id="signup-phoneNumber">
+                            <input type="text" class="form-control" id="signup-phoneNumber" maxlength="20">
                             <label for="phoneNumber">Phone Number</label>
                         </form>
                         <div class="alert alert-danger d-none" id="contact-errorAlerts">

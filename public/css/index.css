@@ -379,6 +379,7 @@ p {
   text-align: center;
   font-family: "roboto";
   font-weight: 400;
+  font-size: 1.2rem;
 }
 
 nav #navBarLogoImg {
@@ -419,4 +420,9 @@ nav #navbarNavAltMarkup a:hover {
 
 #addNewPhotoTitle {
   text-decoration: underline;
+}
+
+.galleryImg {
+  width: 18em !important;
+  height: 12em !important;
 }/*# sourceMappingURL=index.css.map */

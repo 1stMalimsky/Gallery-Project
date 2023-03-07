@@ -23,8 +23,8 @@ const updateGalleryDisplay = (photoArrFromHomepage) => {
 
 const createPhotoGalleryItem = (photoId, title, credit, price, imgUrl) => {
 
-    return ` <div class="card m-2" style="width: 18rem;box-shadow: 0.2rem 0.2rem 1px 1px rgba(0, 0, 0, 0.3)" id="galleryItem-${photoId}">
-                            <img src="${imgUrl}" class="card-img-top" alt="${title}" id="galleryDisplayImg-${photoId}"> 
+    return ` <div class="card m-2" style="width: 18rem; box-shadow: 0.2rem 0.2rem 1px 1px rgba(0, 0, 0, 0.3)" id="galleryItem-${photoId}">
+                            <img src="${imgUrl}" class="card-img-top galleryImg" alt="${title}" id="galleryDisplayImg-${photoId}"> 
                             <div id="galleryDescription-${photoId}" class="galleryDescription ms-3 me-1">
                                 <h3>${title}</h3>
                                 <h6>Credit: ${credit}</h6>
