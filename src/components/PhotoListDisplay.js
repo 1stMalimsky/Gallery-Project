@@ -1,4 +1,5 @@
 import { clearBtnsEventListener, addBtnsEventListener, handleBuyBtnClick } from "../utils/BtnEventHandlers.js";
+import getIdFromClick from "../utils/getIdFromClick.js";
 
 
 const listDiv = document.getElementById("photosList");
@@ -44,13 +45,13 @@ const createPhotoListItem = (photoId, title, subtitle, credit, price, imgUrl, cr
 
 
 
-const getIdFromClick = (ev) => {
+/* const getIdFromClick = (ev) => {
     let idFromEv = ev.target.id.split("-");
     if (!ev.target.id) {
         idFromEv = ev.target.parentElement.id.split("-");
     }
     return idFromEv[1];
-};
+}; */
 
 const handleDeleteBtnClick = (ev) => {
     deletePhoto(getIdFromClick(ev));

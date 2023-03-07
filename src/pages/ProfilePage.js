@@ -40,13 +40,11 @@ window.addEventListener("load", () => {
 
     editProfileBtn.addEventListener("click", () => {
         editProfile()
-        console.log(users);
     })
 })
 
 const initProfileInfo = () => {
     currentUserDetails = users.find(obj => obj.contact.email === token.email);
-    console.log(currentUserDetails);
     document.getElementById("profilePage-firstName").value = currentUserDetails.name.firstName;
     document.getElementById("profilePage-lastName").value = currentUserDetails.name.lastName;
 

@@ -209,6 +209,118 @@ section p {
     border-radius: 10px;
   }
 }
+#imgExpandPopup {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.6431372549);
+  z-index: 998;
+  display: flex;
+}
+#imgExpandPopup #expandWrapper {
+  width: 90vw;
+  height: 40vw;
+  box-shadow: 0.2rem 0.2rem 1px 1px rgba(0, 0, 0, 0.5);
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+#imgExpandPopup #expandWrapper img {
+  margin: 1em 0 5em 1em;
+  box-shadow: 0.2rem 0.2rem 1px 1px rgba(0, 0, 0, 0.5);
+}
+#imgExpandPopup #expandWrapper #expandInfo {
+  width: 50%;
+  margin: 1em 0 1em 1em;
+}
+#imgExpandPopup #expandWrapper #expandInfo h3,
+#imgExpandPopup #expandWrapper #expandInfo h6 {
+  margin-left: 1em;
+}
+
+@media (max-width: 576px) {
+  #imgExpandPopup #expandWrapper {
+    width: 90vw;
+    height: 60vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+  }
+  #imgExpandPopup #expandWrapper img {
+    margin: 0.5rem 0 0.5rem 0;
+    width: 70vw;
+  }
+  #imgExpandPopup #expandWrapper #expandInfo {
+    margin: 0 0 0.5rem 0;
+    width: 70%;
+  }
+}
+@media (min-width: 577px) and (max-width: 767px) {
+  #imgExpandPopup #expandWrapper {
+    width: 90vw;
+    height: 70vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+  }
+  #imgExpandPopup #expandWrapper img {
+    margin: 0.5rem 0 0.5rem 0;
+    width: 90%;
+  }
+  #imgExpandPopup #expandWrapper #expandInfo {
+    margin: 0 0 0.5rem 0;
+    width: 70%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #imgExpandPopup #expandWrapper img {
+    margin: 1rem 0.5rem 0.5rem 0;
+  }
+  #imgExpandPopup #expandWrapper #expandInfo {
+    margin: 1rem 0 0.5rem 0;
+  }
+}
+@media (min-width: 992px) {
+  #imgExpandPopup #expandWrapper h3 {
+    font-size: 2rem;
+  }
+  #imgExpandPopup #expandWrapper h6 {
+    font-size: 1.3rem;
+  }
+  #imgExpandPopup #expandWrapper img {
+    margin: 1rem 0.5rem 0.5rem 0;
+  }
+  #imgExpandPopup #expandWrapper #expandInfo {
+    margin: 1rem 0 0.5rem 0;
+  }
+}
+@keyframes expand {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes coll {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+.expand {
+  animation: expand 400ms ease;
+}
+
+.collapse {
+  animation: coll 400ms ease;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -229,8 +341,7 @@ h1 {
   font-family: "glook";
   text-align: center;
   text-decoration: underline;
-  text-shadow: -1px -1px 1rem white, 1px -1px 1rem white, -1px 1px 1rem white,
-    1px 1px 1rem white;
+  text-shadow: -1px -1px 1rem white, 1px -1px 1rem white, -1px 1px 1rem white, 1px 1px 1rem white;
 }
 
 h2 {
@@ -285,4 +396,4 @@ nav #navbarNavAltMarkup a:hover {
 
 #addNewPhotoTitle {
   text-decoration: underline;
-} /*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */
