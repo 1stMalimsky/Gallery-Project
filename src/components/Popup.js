@@ -1,6 +1,7 @@
 import Photo from "../models/Photo.js";
 import getNextPhotoId from "../utils/getNextPhotoId.js";
 import isValidUrl from "../validation/validateUrl.js";
+import validate from "../validation/validate.js";
 
 const editSubmitBtn = document.getElementById("editSubmitBtn");
 const editPopupWindow = document.getElementById("editPopupWindow");
@@ -16,6 +17,11 @@ const imgPreviewErrAlert = document.getElementById("imgPreviewErrAlert");
 let selectedPhoto;
 let editPhotoSubmit;
 let addNewPhoto;
+let titleInputOk = false;
+let creditInputOk = false;
+let altInputOk = false;
+let priceInputOk = false;
+let urlInputOk = false;
 
 const initPopup = (selectedPhotoFromHomePage, editPhotoFromHomePage) => {
 
@@ -56,18 +62,137 @@ window.addEventListener("load", () => {
             ev.target.id == "editCancelBtn"
         ) {
             hidePhotoPopup();
-            addNewPhotobtn.disabled = true;
-            editSubmitBtn.disabled = true;
         }
     })
 
+    checkTitleInput();
+    checkUrlInput();
+    checkAltInput();
+    checkCreditInput();
+    checkPriceInput();
 
 });
+editTitleInput.addEventListener("input", () => {
+    checkTitleInput();
+});
+editAlternativeInput.addEventListener("input", () => {
+    checkAltInput();
+});
+editCreditInput.addEventListener("input", () => {
+    checkCreditInput();
+});
+
+editPriceInput.addEventListener("input", () => {
+    checkPriceInput();
+});
+editUrlInput.addEventListener("input", () => {
+    checkUrlInput();
+});
+
+
+
+const validateTextInput = (value) => {
+    const reg = new RegExp("^[A-Za-z0-9-\\s]{0,}$", "g");
+    return validate(reg, value, 2, 50).map((err) => `${err}`);
+};
+
+const validateNumberInput = (value) => {
+    const numRegex = new RegExp("^[1-9][0-9]*$");
+    return validate(numRegex, value, 1, 50).map((err) => `${err}`);
+}
+
+const checkPriceInput = () => {
+    let priceInputErrArr = validateNumberInput(editPriceInput.value);
+
+    if (priceInputErrArr.length > 0) {
+        editPriceInput.classList.add("is-invalid");
+        priceInputOk = false;
+    }
+    else {
+        editPriceInput.classList.remove("is-invalid");
+        priceInputOk = true;
+    }
+    editPhotoButtonEnabler();
+    addPhotoButtonEnabler();
+
+}
+
+const checkTitleInput = () => {
+    let titleInputErrArr = validateTextInput(editTitleInput.value);
+
+    if (titleInputErrArr.length > 0) {
+        editTitleInput.classList.add("is-invalid");
+        titleInputOk = false;
+    }
+    else {
+        editTitleInput.classList.remove("is-invalid");
+        titleInputOk = true;
+    }
+    editPhotoButtonEnabler();
+    addPhotoButtonEnabler();
+}
+
+const checkAltInput = () => {
+    let altInputErrArr = validateTextInput(editAlternativeInput.value);
+
+    if (altInputErrArr.length > 0) {
+        editAlternativeInput.classList.add("is-invalid");
+        altInputOk = false;
+    }
+    else {
+        editAlternativeInput.classList.remove("is-invalid");
+        altInputOk = true;
+    }
+    editPhotoButtonEnabler();
+    addPhotoButtonEnabler();
+}
+
+const checkCreditInput = () => {
+    let creditInputErrArr = validateTextInput(editCreditInput.value);
+
+    if (creditInputErrArr.length > 0) {
+        editCreditInput.classList.add("is-invalid");
+        creditInputOk = false;
+    }
+    else {
+        editCreditInput.classList.remove("is-invalid");
+        creditInputOk = true;
+    }
+    editPhotoButtonEnabler();
+    addPhotoButtonEnabler();
+}
+
+const checkUrlInput = () => {
+    let url = editUrlInput.value;
+    if (isValidUrl(url) || url.endsWith(".jpg") || url.endsWith(".jpeg") || url.endsWith(".png")) {
+        imgUrlDisplay.src = url;
+        imgPreviewErrAlert.classList.add("d-none")
+        urlInputOk = true;
+    }
+    else {
+        imgUrlDisplay.alt = "";
+        imgUrlDisplay.src = url;
+        imgPreviewErrAlert.classList.remove("d-none")
+        imgPreviewErrAlert.innerHTML = "Image URL is invalid. Please try another URL"
+        urlInputOk = false;
+    }
+    editPhotoButtonEnabler();
+    addPhotoButtonEnabler();
+}
+
+const editPhotoButtonEnabler = () => {
+    (editSubmitBtn.disabled = !(urlInputOk && creditInputOk && altInputOk && titleInputOk && priceInputOk))
+
+    console.log("url: " + urlInputOk + " " + "credit: " + creditInputOk + " " + "alt: " + altInputOk + " " + "Title: " + titleInputOk + "price: " + priceInputOk);
+};
+
+const addPhotoButtonEnabler = () =>
+    (addNewPhotobtn.disabled = !(urlInputOk && creditInputOk && altInputOk && titleInputOk && priceInputOk));
 
 addNewPhotobtn.addEventListener("click", () => {
 
     selectedPhoto.id = getNextPhotoId();
-    selectedPhoto.title = editTitleInput;
+    selectedPhoto.title = editTitleInput.value;
     selectedPhoto.imgUrl = editUrlInput.value;
     selectedPhoto.subtitle = editAlternativeInput.value;
     selectedPhoto.credit = editCreditInput.value;
@@ -89,23 +214,9 @@ editSubmitBtn.addEventListener("click", () => {
     editSubmitBtn.disabled = true;
 });
 
-editUrlInput.addEventListener("input", () => {
-    let url = editUrlInput.value;
-    if (isValidUrl(url) || url.endsWith(".jpg") || url.endsWith(".jpeg") || url.endsWith(".png")) {
-        console.log("img works");
-        imgUrlDisplay.src = url;
-        imgPreviewErrAlert.classList.add("d-none")
-        editSubmitBtn.disabled = false;
-    }
-    else {
-        console.log("img doesn't work");
-        imgUrlDisplay.alt = "";
-        imgUrlDisplay.src = url;
-        imgPreviewErrAlert.classList.remove("d-none")
-        imgPreviewErrAlert.innerHTML = "Image URL is invalid. Please try another URL"
-        editSubmitBtn.disabled = true;
-    }
-});
+
+
+
 
 const showPhotoPopup = () => {
     editPopupWindow.classList.remove("d-none");
