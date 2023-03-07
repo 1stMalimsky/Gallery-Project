@@ -3,6 +3,11 @@
     width: 15rem;
     flex-direction: column;
   }
+  .listImg {
+    margin-bottom: 1em;
+    width: 22rem !important;
+    height: 13rem !important;
+  }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .listImg {

@@ -29,8 +29,8 @@ const initPopup = (selectedPhotoFromHomePage, editPhotoFromHomePage) => {
     if (selectedPhotoFromHomePage) {
         selectedPhoto = selectedPhotoFromHomePage;
         editPhotoSubmit = editPhotoFromHomePage;
-        document.getElementById("editSubmitBtn").classList.remove("d-none");
-        document.getElementById("addPhotoSubmitBtn").classList.add("d-none");
+        editSubmitBtn.classList.remove("d-none");
+        addNewPhotobtn.classList.add("d-none");
 
         document.getElementById("editPhotoTitle").classList.remove("d-none");
         document.getElementById("addNewPhotoTitle").classList.add("d-none");
@@ -39,8 +39,8 @@ const initPopup = (selectedPhotoFromHomePage, editPhotoFromHomePage) => {
     else {
         selectedPhoto = new Photo(getNextPhotoId(), "", "", "", "", "", "");
         addNewPhoto = editPhotoFromHomePage;
-        document.getElementById("editSubmitBtn").classList.add("d-none");
-        document.getElementById("addPhotoSubmitBtn").classList.remove("d-none");
+        editSubmitBtn.classList.add("d-none");
+        addNewPhotobtn.classList.remove("d-none");
 
         document.getElementById("editPhotoTitle").classList.add("d-none");
         document.getElementById("addNewPhotoTitle").classList.remove("d-none");
@@ -76,7 +76,6 @@ window.addEventListener("load", () => {
     checkAltInput();
     checkCreditInput();
     checkPriceInput();
-
 });
 editTitleInput.addEventListener("input", () => {
     checkTitleInput();
@@ -196,6 +195,7 @@ const addPhotoButtonEnabler = () =>
     (addNewPhotobtn.disabled = !(urlInputOk && creditInputOk && altInputOk && titleInputOk && priceInputOk));
 
 addNewPhotobtn.addEventListener("click", () => {
+    let date = new Date();
 
     selectedPhoto.id = getNextPhotoId();
     selectedPhoto.title = editTitleInput.value;
@@ -203,7 +203,7 @@ addNewPhotobtn.addEventListener("click", () => {
     selectedPhoto.subtitle = editAlternativeInput.value;
     selectedPhoto.credit = editCreditInput.value;
     selectedPhoto.price = editPriceInput.value;
-    selectedPhoto.createdAt = Date();
+    selectedPhoto.createdAt = date.toDateString();
     addNewPhoto(selectedPhoto);
     hidePhotoPopup();
 
