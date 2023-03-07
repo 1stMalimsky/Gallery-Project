@@ -4,6 +4,7 @@ import isValidUrl from "../validation/validateUrl.js";
 import validate from "../validation/validate.js";
 
 const editSubmitBtn = document.getElementById("editSubmitBtn");
+const editCancelBtn = document.getElementById("editCancelBtn");
 const editPopupWindow = document.getElementById("editPopupWindow");
 const editUrlInput = document.getElementById("editUrlInput");
 const editTitleInput = document.getElementById("editTitleInput");
@@ -51,6 +52,11 @@ const initPopup = (selectedPhotoFromHomePage, editPhotoFromHomePage) => {
     editCreditInput.value = selectedPhoto.credit;
     editPriceInput.value = selectedPhoto.price;
     imgUrlDisplay.src = selectedPhoto.imgUrl;
+    checkTitleInput();
+    checkUrlInput();
+    checkAltInput();
+    checkCreditInput();
+    checkPriceInput();
     showPhotoPopup();
 };
 
@@ -63,7 +69,7 @@ window.addEventListener("load", () => {
         ) {
             hidePhotoPopup();
         }
-    })
+    });
 
     checkTitleInput();
     checkUrlInput();
@@ -200,6 +206,7 @@ addNewPhotobtn.addEventListener("click", () => {
     selectedPhoto.createdAt = Date();
     addNewPhoto(selectedPhoto);
     hidePhotoPopup();
+
 })
 
 editSubmitBtn.addEventListener("click", () => {
@@ -212,9 +219,6 @@ editSubmitBtn.addEventListener("click", () => {
     editPhotoSubmit(selectedPhoto)
     hidePhotoPopup();
 });
-
-
-
 
 
 const showPhotoPopup = () => {
