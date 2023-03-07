@@ -211,7 +211,6 @@ editSubmitBtn.addEventListener("click", () => {
     selectedPhoto.price = editPriceInput.value;
     editPhotoSubmit(selectedPhoto)
     hidePhotoPopup();
-    editSubmitBtn.disabled = true;
 });
 
 
