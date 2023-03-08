@@ -89,13 +89,23 @@ Only signed up, business account users can add, edit and delete photos.
 
 To get started, I recommend signing up. That way you'll get all the functions out of the website. Here's where you sign up:
 <br>
+<br>
 <img src="./public/assets/imgs/signupScreenshot.png">
+<br>
 <br>
 As a new user, you must input your full name, a valid email address and a password.<br> There is extra info you can add about yourself and you're welcome to do so after signing up as well in the 'profile' tab.<br><br>
 
 To navigate between display options, simply click one of the display icons under the display options title:
 <br>
 <img src="./public/assets/imgs/DisplayOptionsScreenshot.png" >
+<br>
+<br>
+To edit, remove and buy(not working at the moment), choose the list display and choose the photo you'd like to change (marked in green). To add a new photo, click the 'add new photo' button on the navbar (marked in red):
+<br>
+<br>
+<img src="./public/assets/imgs/editAndAddPhoto.png">
+<br>
+<br>
 
 ### Prerequisites
 
