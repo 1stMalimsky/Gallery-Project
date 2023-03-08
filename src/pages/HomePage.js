@@ -140,7 +140,6 @@ const addNewPhotoPopup = () => {
 };
 
 const addNewPhoto = (newPhoto) => {
-    console.log("addNewPhoto activated");
     storagePhotoArr = [...storagePhotoArr, newPhoto];
     let nextPhotoId = +newPhoto.id + 1;
     localStorage.setItem("nextPhotoId", nextPhotoId + "");

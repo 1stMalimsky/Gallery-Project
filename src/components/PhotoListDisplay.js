@@ -1,7 +1,6 @@
 import { clearBtnsEventListener, addBtnsEventListener, handleBuyBtnClick } from "../utils/BtnEventHandlers.js";
 import getIdFromClick from "../utils/getIdFromClick.js";
 
-
 const listDiv = document.getElementById("photosList");
 let photoArr;
 let businessAccountStatus;
@@ -50,7 +49,6 @@ const handleDeleteBtnClick = (ev) => {
 const handleEditBtnClick = (ev) => {
     selectedPhotoPopup(getIdFromClick(ev));
 };
-
 
 const createListDisplay = () => {
     let outputStr = "";

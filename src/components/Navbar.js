@@ -1,6 +1,4 @@
 import checkBusinessAccountStatus from "../utils/BusinessAccountStatusCheck.js";
-import initPopup from "./Popup.js";
-
 
 let isConnected;
 let isBusinessAccount;
@@ -10,8 +8,6 @@ const addNewPhotoLink = document.getElementById("addNewPhoto-link")
 const notConnectedNavbar = document.getElementById("navbar-notConnected");
 const connectedNavbar = document.getElementById("navbar-connected");
 
-
-
 window.addEventListener("load", () => {
 
     document.getElementById("logout-link").addEventListener("click", () => {
@@ -19,8 +15,6 @@ window.addEventListener("load", () => {
         location.reload();
     })
 })
-
-
 
 const initiateNavbar = (addNewPhotoFromHomePage) => {
     isConnected = checkIfConnected();

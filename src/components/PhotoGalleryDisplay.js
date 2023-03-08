@@ -7,9 +7,6 @@ const imgDiv = document.getElementById("imgExpandPopup");
 
 const expandWrapper = document.getElementById("expandWrapper");
 
-
-
-
 let photoArr;
 
 const initializePhotosGalleryDisplay = (photoArrFromHomepage) => {
@@ -62,7 +59,6 @@ const createExpandDisplay = (id) => {
             expandWrapper.classList.remove("expand");
             expandWrapper.classList.add("collapse");
             setTimeout(() => imgDiv.classList.add("d-none"), 300);
-
         }
     })
     let clickedPhoto = photoArr.find((photo) => photo.id === +id)

@@ -1,9 +1,6 @@
-import PAGES from "../models/PageModel.js"
 import validateName from "../validation/nameValidation.js";
 import validateEmail from "../validation/emailValidation.js";
 import validatePassword from "../validation/passwordValidation.js";
-import { pageChangeHandler } from "../routes/router.js";
-
 
 const profileFName = document.getElementById("profilePage-firstName");
 const profileLName = document.getElementById("profilePage-lastName");
@@ -195,7 +192,6 @@ const editProfile = () => {
 
         editProfileSuccessDiv.classList.remove("d-none");
         editProfileSuccessDiv.innerHTML = "Edit Successful!";
-        console.log(users);
         setTimeout(() => {
             editProfileSuccessDiv.classList.add("d-none");
             location.reload();

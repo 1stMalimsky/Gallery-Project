@@ -217,7 +217,6 @@ signupBtn.addEventListener("click", () => {
         pageChangeHandler(PAGES.LOGIN)
     }
         , 2500);
-
 }
 );
 

@@ -4,7 +4,6 @@ import isValidUrl from "../validation/validateUrl.js";
 import validate from "../validation/validate.js";
 
 const editSubmitBtn = document.getElementById("editSubmitBtn");
-const editCancelBtn = document.getElementById("editCancelBtn");
 const editPopupWindow = document.getElementById("editPopupWindow");
 const editUrlInput = document.getElementById("editUrlInput");
 const editTitleInput = document.getElementById("editTitleInput");

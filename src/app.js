@@ -9,8 +9,6 @@ import "./initialData/initialDataPhotos.js";
 import initiateNavbar from "./components/Navbar.js";
 import { addNewPhotoPopup } from "./pages/HomePage.js";
 
-
-
 const navLogoLink = document.getElementById("navBarLogoImg");
 
 const navHomeLink = document.getElementById("home-page-link");
@@ -37,6 +35,3 @@ navAboutLink.addEventListener("click", () => pageChangeHandler(PAGES.ABOUT));
 navSignupLink.addEventListener("click", () => pageChangeHandler(PAGES.SIGNUP));
 navLoginLink.addEventListener("click", () => pageChangeHandler(PAGES.LOGIN));
 navProfileLink.addEventListener("click", () => pageChangeHandler(PAGES.PROFILE));
-
-
-

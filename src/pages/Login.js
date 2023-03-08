@@ -3,7 +3,6 @@ import { pageChangeHandler } from "../routes/router.js";
 import validateEmail from "../validation/emailValidation.js";
 import validatePassword from "../validation/passwordValidation.js";
 
-
 const loginEmailInput = document.getElementById("login-emailAddress");
 const loginPasswordInput = document.getElementById("login-password");
 const loginBtn = document.getElementById("login-btn");
@@ -13,7 +12,6 @@ const passwordErrDiv = document.getElementById("loginPasswordErrDiv");
 
 let loginEmailCheck = false;
 let loginPasswordCheck = false;
-
 
 signupLink.addEventListener("click", () => {
     pageChangeHandler(PAGES.SIGNUP);
