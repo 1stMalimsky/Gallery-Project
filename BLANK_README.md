@@ -29,7 +29,6 @@
   <p align="center">
     This project is a website that displays and sells photos. Users can view the photos in several display options and sign up in order to add,edit or remove photos.  
     <br />
-    <img src="./public/assets/imgs/screenshot1.png">
     <br />
     <br />
   </p>
@@ -65,7 +64,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<img src="./public/assets/imgs/screenshot1.png">
 
 Welcome to my photo gallery. You're welcome to browse the photos within or upload you own
 photos. I've set up three display options:
@@ -88,8 +87,14 @@ Only signed up, business account users can add, edit and delete photos.
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+To get started, I recommend signing up. That way you'll get all the functions out of the website. Here's where you sign up:
+<br>
+<img src="./public/assets/imgs/signupScreenshot.png">
+As a new user, you must input your full name, a valid email address and a password.<br> There is extra info you can add about yourself and you're welcome to do so after signing up as well in the 'profile' tab.<br><br>
+
+To navigate between display options, simply click one of the display icons under the display options title:
+
+<img src="./public/assets/imgs/DisplayOptionsScreenshot.png" >
 
 ### Prerequisites
 
