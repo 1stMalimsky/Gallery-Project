@@ -112,10 +112,11 @@ To edit, remove and buy(not working at the moment), choose the list display and 
 Before you can use or contribute to this project, you will need to have the following software and tools installed:
 
     Git: You can download and install Git from the official website at git-scm.com.
-    Code editor: You will need a code editor to modify and work with the project files. I recommend using Visual Studio Code, which you can download from code.visualstudio.com.
+    Code editor: You will need a code editor to modify and work with the project files.
+    <br>
+    I recommend using Visual Studio Code, which you can download from code.visualstudio.com.
+    <br>
     Web browser: To view the website, you will need a web browser like Google Chrome, Mozilla Firefox, or Microsoft Edge.
-
-In addition to these software prerequisites, note that this project is hosted on GitHub Pages and does not require a server to run. However, users will need to load the website by themselves using the provided URL.
 
 ### Installation
 
