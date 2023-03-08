@@ -162,15 +162,14 @@ Note that this project is also hosted on GitHub Pages and can be accessed by vis
 ## Roadmap
 
 Here are some planned improvements and bug fixes for this project:
-
-    Fix the "Buy Now" option: Currently, the "Buy Now" button is not functioning properly. We plan to investigate and fix this issue in the next release.
-
-    Improve the Carousel display: The current carousel display could use some improvements to make it more visually appealing and user-friendly. We plan to make some changes to the carousel display in the next release.
-
-    Add transition animation features: To enhance the user experience, we plan to add transition animations to the website in the next release. These animations will help make the website more engaging and visually appealing.
-
-    Create an actual Cart page: Currently, there is no dedicated cart page on the website. We plan to create a dedicated cart page that will allow users to view their selected items and proceed to checkout. This will improve the overall shopping experience on the website.
-
+<br>
+<br>
+Fix the "Buy Now" option: Currently, the "Buy Now" button is not functioning yet. We plan to fix this issue in the next release.<br>
+Improve the Carousel display: The current carousel display could use some improvements to make it more visually appealing and user-friendly. We plan to make some changes tothe carousel display in the next release.<br>
+Add transition animation features: To enhance the user experience, we plan to add transition animations to the website in the next release. These animations will help make the website more engaging and visually appealing.<br>
+Create an actual Cart page: Currently, there is no dedicated cart page on the website. We plan to create a dedicated cart page that will allow users to view their selected items and proceed to checkout. This will improve the overall shopping experience onthe website.
+<br>
+<br>
 We are committed to improving this project and will continue to add new features and functionality in future releases. If you have any suggestions or feedback, please feel free to reach out to us.
 
 ## Contributing
