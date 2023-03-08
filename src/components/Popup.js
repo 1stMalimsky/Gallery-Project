@@ -186,9 +186,7 @@ const checkUrlInput = () => {
 }
 
 const editPhotoButtonEnabler = () => {
-    (editSubmitBtn.disabled = !(urlInputOk && creditInputOk && altInputOk && titleInputOk && priceInputOk))
-
-    console.log("url: " + urlInputOk + " " + "credit: " + creditInputOk + " " + "alt: " + altInputOk + " " + "Title: " + titleInputOk + "price: " + priceInputOk);
+    (editSubmitBtn.disabled = !(urlInputOk && creditInputOk && altInputOk && titleInputOk && priceInputOk));
 };
 
 const addPhotoButtonEnabler = () =>

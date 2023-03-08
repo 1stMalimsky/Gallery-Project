@@ -43,15 +43,6 @@ const createPhotoListItem = (photoId, title, subtitle, credit, price, imgUrl, cr
 };
 
 
-
-/* const getIdFromClick = (ev) => {
-    let idFromEv = ev.target.id.split("-");
-    if (!ev.target.id) {
-        idFromEv = ev.target.parentElement.id.split("-");
-    }
-    return idFromEv[1];
-}; */
-
 const handleDeleteBtnClick = (ev) => {
     deletePhoto(getIdFromClick(ev));
 };
