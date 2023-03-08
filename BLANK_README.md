@@ -1,6 +1,6 @@
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 
-:<a name="readme-top">My Gallery Website - Alon Malimsky</a>
+<a name="readme-top">My Gallery Website - Alon Malimsky</a>
 
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
@@ -19,24 +19,17 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="./public/assets/imgs/Logo.png" alt="Logo" width="100" height="80">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">The Gallery</h3>
 
   <p align="center">
-    project_description
+    This project is a website that displays and sells photos. Users can view the photos in several display options and sign up in order to add,edit or remove photos.  
     <br />
     <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
     <br />
