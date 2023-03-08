@@ -121,46 +121,57 @@ Web browser: To view the website, you will need a web browser like Google Chrome
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = "ENTER YOUR API";
-   ```
+To use this project, you can either download the source code or clone the repository using Git. To clone the repository, follow these steps:
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+    Open a terminal or command prompt.
+    Navigate to the directory where you want to store the project files.
+    Run the following command:
 
-<!-- USAGE EXAMPLES -->
+git clone https://github.com/1stMalimsky/Gallery-Project.git
+
+Once the repository has been cloned, navigate to the project directory:
+
+    cd your-repository
+
+    Open the project files in your preferred code editor and start making changes!
+
+Alternatively, you can download the source code as a ZIP file by clicking on the "Code" button on the GitHub repository page and selecting "Download ZIP". Extract the contents of the ZIP file to your desired location and open the project files in your preferred code editor.
+
+Note that this project does not require any additional dependencies or packages to run.
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+To use this project, follow these steps:
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+    Clone or download the project files as described in the "Installation" section.
+    Open the project files in your preferred code editor.
+    Make any necessary changes or modifications to the project files.
+    Save your changes.
+    Commit your changes and push them to the remote repository on GitHub.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+If you want to view the website locally, you can use a local development server to serve the files. One way to do this is by using a code editor with a built-in server, such as Visual Studio Code. To start a local server using Visual Studio Code, follow these steps:
+
+    Open Visual Studio Code and navigate to the project directory.
+    Click on the "Go Live" button in the bottom-right corner of the editor.
+    Your default web browser should open and display the website.
+
+Note that this project is also hosted on GitHub Pages and can be accessed by visiting the URL provided in the "GitHub Pages" section of the repository's settings page.
 
 <!-- ROADMAP -->
 
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-  - [ ] Nested Feature
+Here are some planned improvements and bug fixes for this project:
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+    Fix the "Buy Now" option: Currently, the "Buy Now" button is not functioning properly. We plan to investigate and fix this issue in the next release.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+    Improve the Carousel display: The current carousel display could use some improvements to make it more visually appealing and user-friendly. We plan to make some changes to the carousel display in the next release.
 
-<!-- CONTRIBUTING -->
+    Add transition animation features: To enhance the user experience, we plan to add transition animations to the website in the next release. These animations will help make the website more engaging and visually appealing.
+
+    Create an actual Cart page: Currently, there is no dedicated cart page on the website. We plan to create a dedicated cart page that will allow users to view their selected items and proceed to checkout. This will improve the overall shopping experience on the website.
+
+We are committed to improving this project and will continue to add new features and functionality in future releases. If you have any suggestions or feedback, please feel free to reach out to us.
 
 ## Contributing
 
