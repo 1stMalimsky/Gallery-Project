@@ -90,10 +90,11 @@ Only signed up, business account users can add, edit and delete photos.
 To get started, I recommend signing up. That way you'll get all the functions out of the website. Here's where you sign up:
 <br>
 <img src="./public/assets/imgs/signupScreenshot.png">
+<br>
 As a new user, you must input your full name, a valid email address and a password.<br> There is extra info you can add about yourself and you're welcome to do so after signing up as well in the 'profile' tab.<br><br>
 
 To navigate between display options, simply click one of the display icons under the display options title:
-
+<br>
 <img src="./public/assets/imgs/DisplayOptionsScreenshot.png" >
 
 ### Prerequisites
