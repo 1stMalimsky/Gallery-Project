@@ -1,6 +1,6 @@
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 
-<a name="readme-top">My Gallery Website - Alon Malimsky</a>
+:<a name="readme-top">My Gallery Website - Alon Malimsky</a>
 
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
