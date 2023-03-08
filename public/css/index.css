@@ -344,6 +344,18 @@ section p {
   animation: coll 400ms ease;
 }
 
+#footer {
+  width: 100%;
+  height: 10rem;
+  background-color: rgba(235, 234, 201, 0.748);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#footer p {
+  font-size: 2rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -354,6 +366,10 @@ body {
   background-image: url("../assets/imgs/texturesWall.jpeg");
   background-repeat: repeat;
   background-size: auto;
+}
+
+.nav {
+  background-color: rgba(235, 234, 201, 0.748) !important;
 }
 
 a {

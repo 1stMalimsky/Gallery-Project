@@ -4,6 +4,7 @@
 @import "_editPopup";
 @import "_aboutUs";
 @import "_imgExpand";
+@import "_footer";
 @import url("https://fonts.googleapis.com/css2?family=Gloock&family=Roboto:wght@400;500&display=swap");
 
 * {
@@ -15,6 +16,10 @@ body {
   background-image: url("../assets/imgs/texturesWall.jpeg");
   background-repeat: repeat;
   background-size: auto;
+}
+
+.nav {
+  background-color: rgba(235, 234, 201, 0.748) !important;
 }
 
 a {
