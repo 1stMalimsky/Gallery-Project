@@ -22,16 +22,14 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
     <img src="./public/assets/imgs/Logo.png" alt="Logo" width="120px" height="80px">
-  </a>
 
 <h3 align="center">The Gallery</h3>
 
   <p align="center">
     This project is a website that displays and sells photos. Users can view the photos in several display options and sign up in order to add,edit or remove photos.  
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <img src="./public/assets/imgs/screenshot1.png">
     <br />
     <br />
   </p>
